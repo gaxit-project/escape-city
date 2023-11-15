@@ -5,20 +5,23 @@ using UnityEngine.InputSystem;
 public class PlayerShootingsecond : MonoBehaviour
 {
     private Animator anim;
-    private GameObject hand;
+    public bulletLvUI bUI;
+    public weaponscript weaponscript;
 
     private int damagePerShot = 20;
     private float timeBetweenBullets = 0.15f;
     private float range = 100f;
 
-    private GameObject weapon;
     float timer;
+    private WeaponStates weaponst;
     Ray shootRay = new Ray();
+    bool relord=false;
     RaycastHit shootHit;
     int shootableMask;
     ParticleSystem gunParticles;
     LineRenderer gunLine;
-    AudioSource gunAudio;
+    public AudioSource gunAudio;
+    public AudioSource NonebulletAudio;
     Light gunLight;
     float effectsDisplayTime = 0.2f;
     bool Fire=false;
@@ -27,11 +30,9 @@ public class PlayerShootingsecond : MonoBehaviour
     void Awake ()
     {
         anim = GameObject.Find("Player").GetComponent<Animator>();
-        hand = GameObject.Find("righthand");
         shootableMask = LayerMask.GetMask ("enemy");
         gunParticles = GetComponent<ParticleSystem> ();
         gunLine = GetComponent <LineRenderer> ();
-        gunAudio = GetComponent<AudioSource> ();
         gunLight = GetComponent<Light> ();
     }
     public void OnFire(InputAction.CallbackContext context){
@@ -46,24 +47,36 @@ public class PlayerShootingsecond : MonoBehaviour
     {
         if(anim.GetBool("Die"))return;
         if(anim.GetInteger("type")==0){
+            Fire=false;
             DisableEffects ();
             return;
         }
-        weapon = hand.GetComponent<weaponscript>().weapon;
-        damagePerShot=weapon.GetComponent<WeaponStates>().damagePerShot;
-        timeBetweenBullets=weapon.GetComponent<WeaponStates>().timeBetweenBullets;
-        range=weapon.GetComponent<WeaponStates>().range;
+        weaponst = weaponscript.weapon.GetComponent<WeaponStates>();
+        damagePerShot=weaponst.damagePerShot;
+        timeBetweenBullets=weaponst.timeBetweenBullets;
+        range=weaponst.range;
         timer += Time.deltaTime;
         if(timeBetweenBullets<0.2){
-            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0)
+
+            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0 &&relord==false)
             {
-                Shoot ();
+                if(weaponst.shot()){
+                    Shoot ();
+                }else{
+                    NonebulletAudio.Play ();
+                    Fire=false;
+                }
             }
         }else{
-            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0)
+            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0 &&relord==false)
             {
-                Shoot ();
-                Fire=false;
+                if(weaponst.shot()){
+                    Shoot ();
+                    Fire=false;
+                }else{
+                    NonebulletAudio.Play();
+                    Fire=false;
+                }
             }
         }
 
@@ -91,6 +104,7 @@ public class PlayerShootingsecond : MonoBehaviour
 
         gunParticles.Stop ();
         gunParticles.Play ();
+        bUI.MesageUpdate();
 
         gunLine.enabled = true;
         gunLine.SetPosition (0, transform.position);

@@ -6,6 +6,7 @@ public class DieandDrop : MonoBehaviour
 {
     Animator anim;
     public GameObject[] item;
+    public float parcent = 50;
     private Transform _transform;
     // Start is called before the first frame update
 
@@ -15,7 +16,7 @@ public class DieandDrop : MonoBehaviour
         anim = GetComponent<Animator>();
         _transform=transform;
         if(item.Length!=0){
-            int index=(int)Random.Range (0f, (float)(item.Length*2));
+            int index=(int)Random.Range (0f, (float)(item.Length)*(100/parcent));
             if(index<=item.Length-1){
                 Instantiate (item[index], _transform.position, Quaternion.identity);
             }

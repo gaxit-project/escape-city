@@ -34,7 +34,7 @@ public class Attack : MonoBehaviour
             foreach(GameObject obj in enemy){
                 obj.GetComponent<Patrol>().sound=4;
             }
-            WeaponCollider = hand.GetComponent<weaponscript>().weapon.GetComponent<MeshCollider>();
+            WeaponCollider = hand.GetComponent<weaponscript>().weapon.GetComponent<CapsuleCollider>();
             //����R���C�_�[���I���ɂ���
             WeaponCollider.enabled = true;
 

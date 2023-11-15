@@ -9,6 +9,8 @@ public class Player_Item : MonoBehaviour
     
     private GameManager gameManager;
     ParticleSystem gunParticles;
+    public bulletLvUI bUI;
+    public sordLvUI sUI;
 
     public void Start()
     {
@@ -54,6 +56,8 @@ public class Player_Item : MonoBehaviour
                 gameManager.Sounditem();
                 gunParticles.Stop ();
                 gunParticles.Play ();
+                bUI.MesageUpdate();
+                sUI.MesageUpdate();
             }
         }else if(other.CompareTag("cureitem")){
             var pick = other.GetComponent<PickUpObject>();

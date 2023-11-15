@@ -24,6 +24,11 @@ public class PlayerControllerWithCamera : MonoBehaviour
     [Header("�J����"), SerializeField]
     private Camera _targetCamera;
 
+    [Header("リロード終わり音"), SerializeField]
+    private AudioSource relordstart;
+    [Header("リロード開始音"), SerializeField]
+    private AudioSource relordend;
+
     public Cinemachinecamara Vircamscript;
     public float gunguidrange;
 
@@ -43,20 +48,21 @@ public class PlayerControllerWithCamera : MonoBehaviour
     private bool _isGroundedPrev;
 
     private Animator anim;
+    bool endrelord=false;
     private bool walk=false;
-
+    bool relordmode=false;
     LineRenderer itemguid;
     private GameObject[] itemlist;
-    private GameObject hand;
+    public weaponscript weapsc;
     LineRenderer gunLine;
     Ray shootRay = new Ray();
     RaycastHit shootHit;
     private GameManager gameManager;
+    public bulletLvUI bUI;
     void Start()
     {
         gunLine = GetComponent <LineRenderer> ();
         anim = gameObject.GetComponent<Animator>();
-        hand=GameObject.Find("righthand");
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -85,6 +91,15 @@ public class PlayerControllerWithCamera : MonoBehaviour
         // ���͒l��ێ����Ă���
 
     }
+    public void OnRelord(InputAction.CallbackContext context){
+        if(anim.GetBool("relord"))return;
+        if (!context.performed){
+            relordmode=false;
+            
+            return;
+        }
+        relordmode=true;
+    }
 
     /// <summary>
     /// �W�����vAction(PlayerInput������Ă΂��)
@@ -111,7 +126,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
     {
         if(anim.GetBool("Die"))return;
         var isGrounded = _characterController.isGrounded;
-
+        //着地状態の処理。ジャンプに関係
         if (isGrounded && !_isGroundedPrev)
         {
             // ���n����u�Ԃɗ����̏������w�肵�Ă���
@@ -132,26 +147,45 @@ public class PlayerControllerWithCamera : MonoBehaviour
         // �J�����̌����i�p�x[deg]�j�擾
         var cameraAngleY = _targetCamera.transform.eulerAngles.y;
 
-        //AIM武器持ち替え処理
+        //AIM武器持ち替え処理　リロード中は無視
         var moveVelocity = new Vector3(0,0,0);
-        if(pastaim!=aim){
+        if(anim.GetBool("relord")){
+        }else if(pastaim!=aim||endrelord){
             if(aim){
                 gameManager.Soundchangeweapon();
-                hand.GetComponent<weaponscript>().weaponnumber=1;
-                hand.GetComponent<weaponscript>().changeweapon();
+                weapsc.changeweapon(1);
                 anim.SetInteger("type",1);
                 gunLine.enabled = true;
             }else{
                 gameManager.Soundchangeweapon();
-                hand.GetComponent<weaponscript>().weaponnumber=0;
-                hand.GetComponent<weaponscript>().changeweapon();
+                weapsc.changeweapon(0);
                 anim.SetInteger("type",0);
                 gunLine.enabled = false;
             }
+            endrelord=false;
             pastaim=aim;
         }
+        //リロード処理
+        if(relordmode==true&&weapsc.acseceweapon(1).GetComponent<WeaponStates>().relordcheck()){
+            weapsc.changeweapon(1);
+            relordstart.Play();
+            anim.SetInteger("type",1);
+            anim.SetBool("relord",true);
+            gunLine.enabled = false;
+            Invoke("relordsound", 2.0f);
+            Invoke("Relordbullet", 2.5f);
+            relordmode=false;
+        }else{
+            relordmode=false;
+        }
         //移動
-        if(!aim){
+        if(anim.GetBool("relord")){
+            moveVelocity = new Vector3(
+                _inputMove.x * aims_speed*_speed,
+                _verticalVelocity,
+                _inputMove.y * aims_speed*_speed
+            );
+        }else if(!aim){
             moveVelocity = new Vector3(
                 _inputMove.x * _speed,
                 _verticalVelocity,
@@ -172,6 +206,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
         // CharacterController�Ɉړ��ʂ��w�肵�A�I�u�W�F�N�g�𓮂���
         _characterController.Move(moveDelta);
+        //linelenderer(予測射線)
         if(aim){
             shootRay.origin = transform.position;
             shootRay.direction = transform.forward;
@@ -186,13 +221,13 @@ public class PlayerControllerWithCamera : MonoBehaviour
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * gunguidrange);
             }
         }
-
+        //移動中何をするか
         if(_inputMove != Vector2.zero)
         {
             walk = true;
             //print($"velocity = {_inputMove}");
             anim.SetBool("walk", walk);
-            guidupdate();
+            guidupdate();   //緑のやじるし更新
         }
         else if(_inputMove == Vector2.zero)
         {
@@ -280,6 +315,19 @@ public class PlayerControllerWithCamera : MonoBehaviour
             }
         }
     }
+    //リロード完了関数
+    void relordsound(){
+        relordend.Play();
+    }
+    private void Relordbullet(){
+        anim.SetInteger("type",1);
+        anim.SetBool("relord",false);
+        weapsc.acseceweapon(1).GetComponent<WeaponStates>().relord();
+        endrelord=true;
+        bUI.MesageUpdate();
+    }
+
+    //緑の→オブジェクトを更新
     private void guidupdate(){
         itemlist = GameObject.FindGameObjectsWithTag("SphereItem");
         if(itemlist.Length==0){

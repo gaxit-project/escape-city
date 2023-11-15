@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4574081223596633939
 Transform:
   m_ObjectHideFlags: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9282a4d6f6422024d8db5e06868c2ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponStates: {fileID: 0}
   item: {fileID: 11400000, guid: 70d94786c31327e4893d4aeec7ea8699, type: 2}
-  itemtype: 0
 --- !u!198 &5974064784409434663
 ParticleSystem:
   m_ObjectHideFlags: 0
