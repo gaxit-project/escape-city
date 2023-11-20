@@ -12,6 +12,7 @@ public class PickUpObject : MonoBehaviour
     public Item item;
 
     public int itemtype=0;
+    public int itemnumber=0;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class PickUpObject : MonoBehaviour
     {
         if(kazu==0)return false;
         kazu=0;
-        GameObject weapon = hand.GetComponent<weaponscript>().acseceweapon(itemtype);
+        GameObject weapon = hand.GetComponent<weaponscript>().acseceweapon2(itemtype,itemnumber);
         weapon.GetComponent<WeaponStates>().Upgrade();
         Destroy(gameObject);
         return true;

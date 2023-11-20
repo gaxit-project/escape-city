@@ -24,22 +24,28 @@ public class GameManager : MonoBehaviour
     private RectTransform rectTransform;
     private GameObject brige;
     public GameObject scoreranking;
+    public bool mainmenufanction=true;
+    private int itemnum;
     
     
     void Start()
     {
         brige=GameObject.Find("brige");
-        brige.SetActive(false);
-        PauseMenu.SetActive(false);
-        Clear.SetActive(false);
-        GameOver.SetActive(false);
-        Cursor.SetActive(false);
-        rectTransform = Cursor.GetComponent<RectTransform>();
+        if(brige!=null)brige.SetActive(false);
+        if(mainmenufanction){
+            PauseMenu.SetActive(false);
+            Clear.SetActive(false);
+            GameOver.SetActive(false);
+            Cursor.SetActive(false);
+            rectTransform = Cursor.GetComponent<RectTransform>();
+        }
+        
     }
 
 
     void Update()
     {
+        if(!mainmenufanction)return;
         if(PauseMenu.activeInHierarchy)
         {
             if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
@@ -114,8 +120,9 @@ public class GameManager : MonoBehaviour
     {
         swing.Play();
     }
-    public void taskUpdate(int num){
-        task.GetComponent<GuidMasage>().MesageUpdate(num);
+    public void taskUpdate(){
+        itemnum++;
+        task.GetComponent<GuidMasage>().MesageUpdate(itemnum);
     }
     public void scoreUpdate(int add){
         score.GetComponent<MenuScoreManager>().ScoreUpdate(add);

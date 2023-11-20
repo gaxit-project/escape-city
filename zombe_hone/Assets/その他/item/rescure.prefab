@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 70d94786c31327e4893d4aeec7ea8699, type: 2}
   itemtype: 0
+  itemnumber: 0
 --- !u!198 &2887378958502693776
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -708,7 +709,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 25
+    maxNumParticles: 15
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0

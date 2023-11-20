@@ -7,8 +7,8 @@ public class PlayerControllerWithCamera : MonoBehaviour
 {
     [Header("�ړ��̑���"), SerializeField]
     private float _speed = 3;
-    [Header("�ړ����"), SerializeField]
-    private float aims_speed = 0.3f;
+    private float weapon_speed = 0.3f;
+    
     [Header("run"), SerializeField]
     private float run_speed = 2f;
 
@@ -48,8 +48,11 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
     bool run = false;
 
-    public int stmax = 1000;
-    public int st = 1000;
+    public float stmax = 1000;
+    public float st = 1000;
+    private bool stheal=true;
+    private float sthealtimer=0f;
+    public float sthealtime=1f;
 
     public Slider stBar;
 
@@ -58,6 +61,8 @@ public class PlayerControllerWithCamera : MonoBehaviour
     private bool _isGroundedPrev;
 
     private Animator anim;
+    [Header("リロードの有効無効にします。無効時bUIはいらなくなります。"), SerializeField]
+    private bool relordfunction=false;
     bool endrelord=false;
     private bool walk=false;
     bool relordmode=false;
@@ -69,6 +74,9 @@ public class PlayerControllerWithCamera : MonoBehaviour
     RaycastHit shootHit;
     private GameManager gameManager;
     public bulletLvUI bUI;
+    public sordLvUI sUI;
+    private bool wepchange=false;
+    private bool pastchange=false;
     void Start()
     {
         gunLine = GetComponent <LineRenderer> ();
@@ -102,6 +110,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
     }
     public void OnRelord(InputAction.CallbackContext context){
+        if(relordfunction==false)return;
         if(anim.GetBool("relord"))return;
         if (!context.performed){
             relordmode=false;
@@ -110,10 +119,18 @@ public class PlayerControllerWithCamera : MonoBehaviour
         }
         relordmode=true;
     }
+    public void OnChangeWeapon(InputAction.CallbackContext context){
+        if(anim.GetBool("relord"))return;
+        if (!context.performed){
+            wepchange=false;
+            return;
+        }
+        wepchange=true;
+    }
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if (!context.performed || st == 0)
+        if (!context.performed || st <= 30f)
         {
             run = false;
 
@@ -143,14 +160,15 @@ public class PlayerControllerWithCamera : MonoBehaviour
             _targetCamera = Camera.main;
     }
 
-    public void Dash(int stdown)
+    public void Dash(float stdown)
     {
         if (st <= 0) return;
 
         st = st - stdown;
+        sthealtimer=0f;
         if (stBar != null)
         {
-            stBar.value = st;
+            stBar.value = (int)st;
         }
         if (st <= 0)
         {
@@ -159,15 +177,15 @@ public class PlayerControllerWithCamera : MonoBehaviour
         }
     }
 
-    public void stGain(int gain)
+    public void stGain(float gain)
     {
-        if (st >= stmax || st < 0) return;
+        if (st >= stmax || st < 0||!stheal) return;
 
         st = st + gain;
         if (st >= stmax) st = stmax;
         if (stBar != null)
         {
-            stBar.value = st;
+            stBar.value = (int)st;
         }
     }
 
@@ -195,10 +213,24 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
         // �J�����̌����i�p�x[deg]�j�擾
         var cameraAngleY = _targetCamera.transform.eulerAngles.y;
-
+        //ボタン入力による武器替え処理
+        bool relo=anim.GetBool("relord");
+        if(relo){
+        }else if(wepchange!=pastchange){
+            if(!wepchange){
+                pastchange=wepchange;
+            }else{
+                if(weapsc.changenextweapon()){
+                    gameManager.Soundchangeweapon();
+                    bUI.changeweapon(weapsc.weaponnumber[1]);
+                    sUI.changeweapon(weapsc.weaponnumber[0]);
+                }
+                pastchange=wepchange;
+            }
+        }
         //AIM武器持ち替え処理　リロード中は無視
         var moveVelocity = new Vector3(0,0,0);
-        if(anim.GetBool("relord")){
+        if(relo){
         }else if(pastaim!=aim||endrelord){
             if(aim){
                 gameManager.Soundchangeweapon();
@@ -228,31 +260,19 @@ public class PlayerControllerWithCamera : MonoBehaviour
             relordmode=false;
         }
         //移動
-        if(anim.GetBool("relord")){
+        weapon_speed=weapsc.weapon.GetComponent<WeaponStates>().speed;
+        if(run&&_inputMove != Vector2.zero){
+            Dash(250*Time.deltaTime);
             moveVelocity = new Vector3(
-                _inputMove.x * aims_speed*_speed,
+                _inputMove.x *weapon_speed*run_speed* _speed,
                 _verticalVelocity,
-                _inputMove.y * aims_speed*_speed
+                _inputMove.y *weapon_speed*run_speed* _speed
             );
-        }else if (!aim && !run){
+        }else{
             moveVelocity = new Vector3(
-                _inputMove.x * _speed,
+                _inputMove.x * weapon_speed*_speed,
                 _verticalVelocity,
-                _inputMove.y * _speed
-            );
-        }else if (aim){
-            moveVelocity = new Vector3(
-                _inputMove.x * aims_speed*_speed,
-                _verticalVelocity,
-                _inputMove.y * aims_speed*_speed
-            );
-        }else if (!aim && run)
-        {
-            Dash(25);
-            moveVelocity = new Vector3(
-                _inputMove.x * run_speed * _speed,
-                _verticalVelocity,
-                _inputMove.y * run_speed * _speed
+                _inputMove.y * weapon_speed*_speed
             );
         }
 
@@ -288,18 +308,30 @@ public class PlayerControllerWithCamera : MonoBehaviour
             }
             else
             {
+                sthealtimer+=Time.deltaTime;
                 //print($"velocity = {_inputMove}");
                 anim.SetBool("walk", walk);
                 guidupdate();   //緑のやじるし更新
-                stGain(3);
+                if(sthealtimer<sthealtime){
+                    stheal=false;
+                }else{
+                    stheal=true;
+                }
+                stGain(30*Time.deltaTime);
             }
         }
         else if(_inputMove == Vector2.zero)
         {
+            sthealtimer+=Time.deltaTime*2;
+            if(sthealtimer<sthealtime){
+                    stheal=false;
+            }else{
+                stheal=true;
+            }
             walk = false;
             //print($"velocity = stop");
             anim.SetBool("walk", walk);
-            stGain(10);
+            stGain(100*Time.deltaTime);
         }
         
         if(!aim){

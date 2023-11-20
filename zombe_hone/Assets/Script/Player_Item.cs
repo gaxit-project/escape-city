@@ -6,7 +6,7 @@ public class Player_Item : MonoBehaviour
 {
     private int keyitemCount = 0;
     private bool Clear=false;
-    
+    public GameObject effect;
     private GameManager gameManager;
     ParticleSystem gunParticles;
     public bulletLvUI bUI;
@@ -29,8 +29,7 @@ public class Player_Item : MonoBehaviour
                 gameManager.Sounditem();
                 //Destroy(other.gameObject); // 球体アイテムを削除
                 sphereItemCount++;
-                gameManager.taskUpdate(sphereItemCount);
-                gameManager.scoreUpdate(500);
+                GameObject kira = Instantiate(effect, transform.position, Quaternion.identity);
                 //Debug.Log("橋の部品を手に入れた: " + sphereItemCount);
                 if (sphereItemCount >= 3)
                 {
@@ -56,8 +55,10 @@ public class Player_Item : MonoBehaviour
                 gameManager.Sounditem();
                 gunParticles.Stop ();
                 gunParticles.Play ();
-                bUI.MesageUpdate();
-                sUI.MesageUpdate();
+                if(bUI!=null&&sUI!=null){
+                    bUI.MesageUpdate();
+                    sUI.MesageUpdate();
+                }
             }
         }else if(other.CompareTag("cureitem")){
             var pick = other.GetComponent<PickUpObject>();

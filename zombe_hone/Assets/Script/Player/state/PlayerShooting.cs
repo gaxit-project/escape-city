@@ -36,6 +36,7 @@ public class PlayerShootingsecond : MonoBehaviour
         gunLight = GetComponent<Light> ();
     }
     public void OnFire(InputAction.CallbackContext context){
+        if(anim.GetBool("relord"))return;
         if (context.performed){
             Fire=true;
         }else{
@@ -56,9 +57,9 @@ public class PlayerShootingsecond : MonoBehaviour
         timeBetweenBullets=weaponst.timeBetweenBullets;
         range=weaponst.range;
         timer += Time.deltaTime;
-        if(timeBetweenBullets<0.2){
+        if(timeBetweenBullets<=0.2f){
 
-            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0 &&relord==false)
+            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 if(weaponst.shot()){
                     Shoot ();
@@ -68,7 +69,7 @@ public class PlayerShootingsecond : MonoBehaviour
                 }
             }
         }else{
-            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0 &&relord==false)
+            if(Fire && timer >= timeBetweenBullets && Time.timeScale != 0 )
             {
                 if(weaponst.shot()){
                     Shoot ();

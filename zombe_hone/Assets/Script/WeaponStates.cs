@@ -5,30 +5,34 @@ using UnityEngine;
 public class WeaponStates : MonoBehaviour
 {
     public int lv=1;
+    public Vector3 scaleAdd;
     public int lvmax=10;
     public int type;
     public int damage;
-    public int num;
+    public float speed;
     public int damagePerShot = 20;
     public float timeBetweenBullets = 1f;
     public float range = 100f;
-
     public float sumnumbullets= 10;
     public float maxnumbullets = 10;
     public float numbullets = 10;
 
     public bool Upgrade(){
-        sumnumbullets+=maxnumbullets*2;
+        sumnumbullets+=maxnumbullets;
         if(lvmax<=lv){
             return false;
         }
+        if(lv==0){
+            lv+=1;
+            return true;;
+        }
         lv+=1;
-        damage=(int)(damage+3);
-        damagePerShot = (int)(3+damagePerShot);
-        timeBetweenBullets *= 0.9f;
+        damage=(int)(damage*1.1);
+        damagePerShot = (int)(damagePerShot*1.1);
+        timeBetweenBullets *= 0.95f;
         if(timeBetweenBullets<0.1f)timeBetweenBullets=0.1f;
         if(type==0){
-            transform.transform.localScale=new Vector3(transform.localScale.x,transform.localScale.y,transform.localScale.z+20f);
+            transform.transform.localScale=new Vector3(transform.localScale.x+scaleAdd.x,transform.localScale.y+scaleAdd.y,transform.localScale.z+scaleAdd.z);
         }
         return true;
     }

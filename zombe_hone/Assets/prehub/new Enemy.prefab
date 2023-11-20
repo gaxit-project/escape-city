@@ -304,6 +304,14 @@ MonoBehaviour:
   - {fileID: 4194895679378339444, guid: 69ac852e02b314845ab127d099219dee, type: 3}
   - {fileID: 3820548735734798091, guid: b9b6804319bdd394db438e51683e1bab, type: 3}
   - {fileID: 7476079793024837876, guid: abda6ea64e3a33c4796bb79528581c0f, type: 3}
+  - {fileID: 6421783623287007183, guid: 38261deef8de50847bcf23fbf7884392, type: 3}
+  - {fileID: 563854757707352077, guid: b7e25c4c75534184688eeea80589ea9c, type: 3}
+  itemHIRITU: 3582000036820000358200000000000000000000
+  changehiritu: 1
+  changeditemHIRITU: e457000010270000e4570000e4570000e4570000
+  maxtimer: 300
+  parcent: 50
+  changedparcent: 50
 --- !u!95 &238541520706720309
 Animator:
   serializedVersion: 5
