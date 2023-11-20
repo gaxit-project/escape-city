@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerControllerWithCamera : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerControllerWithCamera : MonoBehaviour
     private float _speed = 3;
     [Header("�ړ����"), SerializeField]
     private float aims_speed = 0.3f;
+    [Header("run"), SerializeField]
+    private float run_speed = 2f;
 
     [Header("�W�����v����u�Ԃ̑���"), SerializeField]
     private float _jumpSpeed = 7;
@@ -42,7 +45,14 @@ public class PlayerControllerWithCamera : MonoBehaviour
     private Vector2 _look;
     bool aim=false;
     bool pastaim=false;
-    
+
+    bool run = false;
+
+    public int stmax = 1000;
+    public int st = 1000;
+
+    public Slider stBar;
+
     private float _verticalVelocity;
     private float _turnVelocity;
     private bool _isGroundedPrev;
@@ -101,6 +111,17 @@ public class PlayerControllerWithCamera : MonoBehaviour
         relordmode=true;
     }
 
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (!context.performed || st == 0)
+        {
+            run = false;
+
+            return;
+        }
+        run = true;
+    }
+
     /// <summary>
     /// �W�����vAction(PlayerInput������Ă΂��)
     /// </summary>
@@ -120,6 +141,34 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
         if (_targetCamera == null)
             _targetCamera = Camera.main;
+    }
+
+    public void Dash(int stdown)
+    {
+        if (st <= 0) return;
+
+        st = st - stdown;
+        if (stBar != null)
+        {
+            stBar.value = st;
+        }
+        if (st <= 0)
+        {
+            st = 0;
+            run = false;
+        }
+    }
+
+    public void stGain(int gain)
+    {
+        if (st >= stmax || st < 0) return;
+
+        st = st + gain;
+        if (st >= stmax) st = stmax;
+        if (stBar != null)
+        {
+            stBar.value = st;
+        }
     }
 
     private void Update()
@@ -185,20 +234,28 @@ public class PlayerControllerWithCamera : MonoBehaviour
                 _verticalVelocity,
                 _inputMove.y * aims_speed*_speed
             );
-        }else if(!aim){
+        }else if (!aim && !run){
             moveVelocity = new Vector3(
                 _inputMove.x * _speed,
                 _verticalVelocity,
                 _inputMove.y * _speed
             );
-        }else{
+        }else if (aim){
             moveVelocity = new Vector3(
                 _inputMove.x * aims_speed*_speed,
                 _verticalVelocity,
                 _inputMove.y * aims_speed*_speed
             );
+        }else if (!aim && run)
+        {
+            Dash(25);
+            moveVelocity = new Vector3(
+                _inputMove.x * run_speed * _speed,
+                _verticalVelocity,
+                _inputMove.y * run_speed * _speed
+            );
         }
-        
+
         moveVelocity = Quaternion.Euler(0, cameraAngleY, 0) * moveVelocity;
 
         // ���݃t���[���̈ړ��ʂ��ړ����x����v�Z
@@ -225,15 +282,24 @@ public class PlayerControllerWithCamera : MonoBehaviour
         if(_inputMove != Vector2.zero)
         {
             walk = true;
-            //print($"velocity = {_inputMove}");
-            anim.SetBool("walk", walk);
-            guidupdate();   //緑のやじるし更新
+            if (run)
+            {
+                anim.SetBool("run", run);
+            }
+            else
+            {
+                //print($"velocity = {_inputMove}");
+                anim.SetBool("walk", walk);
+                guidupdate();   //緑のやじるし更新
+                stGain(3);
+            }
         }
         else if(_inputMove == Vector2.zero)
         {
             walk = false;
             //print($"velocity = stop");
             anim.SetBool("walk", walk);
+            stGain(10);
         }
         
         if(!aim){
