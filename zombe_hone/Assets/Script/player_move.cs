@@ -302,16 +302,13 @@ public class PlayerControllerWithCamera : MonoBehaviour
         if(_inputMove != Vector2.zero)
         {
             walk = true;
-            if (run)
-            {
-                anim.SetBool("run", run);
-            }
-            else
+            anim.SetBool("run", run);
+            anim.SetBool("walk", walk);
+            guidupdate();   //緑のやじるし更新
+            if(!run)
             {
                 sthealtimer+=Time.deltaTime;
                 //print($"velocity = {_inputMove}");
-                anim.SetBool("walk", walk);
-                guidupdate();   //緑のやじるし更新
                 if(sthealtimer<sthealtime){
                     stheal=false;
                 }else{

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject keepCanvas;
     public GameObject PauseMenu;
     public GameObject Clear;
     public GameObject GameOver;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     private RectTransform rectTransform;
     private GameObject brige;
     public GameObject scoreranking;
+    public FadeScript Fadepanel;
     public bool mainmenufanction=true;
     private int itemnum;
     
@@ -126,5 +129,22 @@ public class GameManager : MonoBehaviour
     }
     public void scoreUpdate(int add){
         score.GetComponent<MenuScoreManager>().ScoreUpdate(add);
+    }
+    public void movieStart(){
+        Fadepanel.Fadein=true;
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(keepCanvas);
+        DontDestroyOnLoad(virtalmouse);
+        Invoke("changeTimeupcine", 1.0f);
+        Invoke("kaijodestroy", 1.5f);
+    }
+    void changeTimeupcine(){
+        SceneManager.LoadScene("TimeUp");
+    }
+    void kaijodestroy(){
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(keepCanvas, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(virtalmouse, SceneManager.GetActiveScene());
+        Fadepanel.Fadeout=true;
     }
 }
