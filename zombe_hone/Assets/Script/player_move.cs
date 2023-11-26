@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections;
+
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerControllerWithCamera : MonoBehaviour
@@ -11,6 +13,9 @@ public class PlayerControllerWithCamera : MonoBehaviour
     
     [Header("run"), SerializeField]
     private float run_speed = 2f;
+
+    [Header("damage"), SerializeField]
+    private float damage_speed = 0.8f;
 
     [Header("�W�����v����u�Ԃ̑���"), SerializeField]
     private float _jumpSpeed = 7;
@@ -47,6 +52,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
     bool pastaim=false;
 
     bool run = false;
+    bool damage = false;
 
     public float stmax = 1000;
     public float st = 1000;
@@ -137,6 +143,20 @@ public class PlayerControllerWithCamera : MonoBehaviour
             return;
         }
         run = true;
+    }
+
+    public void P_Damage()
+    {
+        StartCoroutine("Wait_damage");
+    }
+
+    IEnumerator Wait_damage()
+    {
+        damage = true;
+        anim.SetBool("itaiyou", damage);
+        yield return new WaitForSeconds(1);
+        damage = false;
+        anim.SetBool("itaiyou", damage);
     }
 
     /// <summary>
@@ -261,7 +281,16 @@ public class PlayerControllerWithCamera : MonoBehaviour
         }
         //移動
         weapon_speed=weapsc.weapon.GetComponent<WeaponStates>().speed;
-        if(run&&_inputMove != Vector2.zero){
+
+        if (damage)
+        {
+            moveVelocity = new Vector3(
+                _inputMove.x * weapon_speed * _speed * damage_speed,
+                _verticalVelocity,
+                _inputMove.y * weapon_speed * _speed * damage_speed
+            );
+        }
+        else if (run&&_inputMove != Vector2.zero){
             Dash(250*Time.deltaTime);
             moveVelocity = new Vector3(
                 _inputMove.x *weapon_speed*run_speed* _speed,

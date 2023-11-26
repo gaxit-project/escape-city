@@ -10,8 +10,10 @@ public class TestTrapScript : MonoBehaviour
         if (other.CompareTag("Player")&&wait==false)
         {
             var status = other.GetComponent<CharacterStatusScript>();
+            var move = other.GetComponent<PlayerControllerWithCamera>();
             status.Damage(10);
             StartCoroutine("E_Damage");
+            move.P_Damage();
         }
         
     }

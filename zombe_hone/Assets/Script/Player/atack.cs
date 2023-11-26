@@ -42,6 +42,7 @@ public class Attack : MonoBehaviour
 
             //Bool�^�̃p�����[�^�[�ł���blRot��True�ɂ���
             anim.SetTrigger("atack");
+            anim.SetBool("itaiyou", false);
             StartCoroutine("E_Damage");
         }
     }

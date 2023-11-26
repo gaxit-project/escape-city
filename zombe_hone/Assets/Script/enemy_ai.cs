@@ -22,6 +22,7 @@ public class Patrol : MonoBehaviour
     float distance;
     [SerializeField] float trackingRange = 3f;
     [SerializeField] float quitRange = 5f;
+    [SerializeField] float atackRange = 3f;
     public float _sightAngle = 30f;
     [SerializeField] bool tracking = false;
 
@@ -74,8 +75,13 @@ public class Patrol : MonoBehaviour
         {
             //�ǐՂ̎��AquitRange��苗�������ꂽ�璆�~
             if (distance > quitRange)
+            {
                 tracking = false;
-
+            }
+            if (distance < atackRange)
+            {
+                anim.SetTrigger("Z_atack");
+            }
             //Player��ڕW�Ƃ���
             agent.destination = playerPos;
         }
@@ -150,6 +156,9 @@ public class Patrol : MonoBehaviour
         //quitRange�͈̔͂�����C���[�t���[���Ŏ���
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, quitRange);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, atackRange);
     }
     void Summonbikkuri(){
         if(timeforcool<cooltime)return;
