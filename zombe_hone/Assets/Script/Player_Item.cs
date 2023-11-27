@@ -16,10 +16,12 @@ public class Player_Item : MonoBehaviour
     {
         gunParticles = GetComponent<ParticleSystem> ();
         gameManager = FindObjectOfType<GameManager>();
+        CharacterStatusScript characterStatus = FindObjectOfType<CharacterStatusScript>();
     }
 
-    private int sphereItemCount = 0;
+    public int sphereItemCount = 0;
     private bool canCollectBlock = false;
+    private bool itemlost=false;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SphereItem"))
@@ -66,6 +68,25 @@ public class Player_Item : MonoBehaviour
                 gameManager.Sounditem();
                 GetComponent<CharacterStatusScript>().Cure(30);
             }
+        }
+    }
+    public void DecreaseSphereItemCount(){
+        //print("aaa");
+            if(sphereItemCount>0){
+                sphereItemCount--;
+                gameManager.taskUpdate(sphereItemCount);
+                gameManager.scoreUpdate(-500);
+                print("LOST");
+                itemlost=true;
+            }
+    }
+    public void DefeatEnemy(){
+        if (itemlost) {
+            sphereItemCount++; // アイテムを取り戻す
+            gameManager.taskUpdate(sphereItemCount);
+            gameManager.scoreUpdate(500); 
+            itemlost=false;
+            print("RETURN");
         }
     }
 }

@@ -83,7 +83,9 @@ public class Patrol : MonoBehaviour
                 anim.SetTrigger("Z_atack");
             }
             //Player��ڕW�Ƃ���
+            if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh) {
             agent.destination = playerPos;
+            }
         }
         else
         {

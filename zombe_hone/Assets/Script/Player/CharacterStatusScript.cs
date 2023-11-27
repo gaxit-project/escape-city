@@ -15,13 +15,14 @@ public class CharacterStatusScript : MonoBehaviour
     public Slider hpBar;
 
     private GameManager gameManager;
-
+    private bool isDelayActive = false;
+    private Player_Item player_Item;
    
 
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        player_Item=FindObjectOfType<Player_Item>();
         gameManager = FindObjectOfType<GameManager>();
 
 
@@ -48,8 +49,17 @@ public class CharacterStatusScript : MonoBehaviour
             else{
                 gameManager.scoreUpdate(30);
                 GetComponent<DieandDrop>().Drop();
+                GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
+            Vector3 newPosition = transform.position;newPosition.y = 0.6f;//ここで埋まる位置を決めいている
+            transform.position = newPosition;
+            player_Item.DefeatEnemy();
                 anim.SetBool("Z_Die", true);
                 Invoke("destroy",2f);
+            }
+        }else{
+            if(this.gameObject.CompareTag("Player")){}else{
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
+            StartCoroutine(ResumeAfterDelay(0.5f));
             }
         }
     }
@@ -74,5 +84,11 @@ public class CharacterStatusScript : MonoBehaviour
     private void destroy(){
         
         Destroy(gameObject);
+    }
+    private IEnumerator ResumeAfterDelay(float delay){
+        yield return new WaitForSeconds(delay); // 指定時間待機する
+
+        anim.speed = 1f;
+        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
     }
 }

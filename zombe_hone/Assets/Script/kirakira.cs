@@ -8,18 +8,26 @@ public class kirakira : MonoBehaviour
     private GameManager gameManager;
     public float speed=8.0f;
     private Vector3 pastcameratrans;
+    private Player_Item playerItemScript;
     // Start is called before the first frame update
     // Update is called once per frame
     void Start(){
         pastcameratrans=Camera.main.gameObject.transform.position;
         gorl=new Vector3(transform.position.x-0.5f,transform.position.y,transform.position.z+4.2f);
         gameManager = FindObjectOfType<GameManager>();
+        playerItemScript=FindObjectOfType<Player_Item>();
     }
     void Update()
     {
         if(transform.position==gorl){
+            int count=0;
+            if (playerItemScript != null)
+            {
+                count = playerItemScript.sphereItemCount;
+                Debug.Log("sphereItemCount: " + count);
+            }
             Destroy(gameObject);
-            gameManager.taskUpdate();
+            gameManager.taskUpdate(count);
             gameManager.scoreUpdate(500);
         }
         gorl+=Camera.main.gameObject.transform.position-pastcameratrans;
