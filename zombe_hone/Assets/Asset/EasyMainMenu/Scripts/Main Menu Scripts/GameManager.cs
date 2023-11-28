@@ -123,8 +123,8 @@ public class GameManager : MonoBehaviour
     {
         swing.Play();
     }
-    public void taskUpdate(){
-        itemnum++;
+    public void taskUpdate(int count){
+        itemnum=count;
         task.GetComponent<GuidMasage>().MesageUpdate(itemnum);
     }
     public void scoreUpdate(int add){
