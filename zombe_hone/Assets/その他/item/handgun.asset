@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: handgun
   m_EditorClassIdentifier: 
   name: hundgun
-  icon: {fileID: 21300000, guid: f93d2c09a12ae3e49890ed1c33ead138, type: 3}
+  icon: {fileID: 21300000, guid: 425781b5880a167408b1bf17ec027f19, type: 3}

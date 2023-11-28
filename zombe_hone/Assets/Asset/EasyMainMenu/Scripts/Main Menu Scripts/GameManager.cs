@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography.X509Certificates;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     public AudioSource changeweapon;
     public AudioSource footwalk;
     public AudioSource swing;
+    public AudioSource damagesound;
     private GameObject mousemem;
     private RectTransform rectTransform;
     private GameObject brige;
@@ -122,6 +124,10 @@ public class GameManager : MonoBehaviour
     public void Soundswing()
     {
         swing.Play();
+    }
+    public void Sounddamage()
+    {
+        damagesound.Play();
     }
     public void taskUpdate(int count){
         itemnum=count;

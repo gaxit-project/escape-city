@@ -83,6 +83,10 @@ public class PlayerControllerWithCamera : MonoBehaviour
     public sordLvUI sUI;
     private bool wepchange=false;
     private bool pastchange=false;
+    private bool wait =false;
+    private bool runwait =false;
+    private bool slowwait =false;
+    private bool Damagewait =false;
     void Start()
     {
         gunLine = GetComponent <LineRenderer> ();
@@ -208,9 +212,65 @@ public class PlayerControllerWithCamera : MonoBehaviour
             stBar.value = (int)st;
         }
     }
+    private void DamageSound() //歩いた時のSound
+        {
+            if (Damagewait==false) {
+            StartCoroutine("Damage_Wait_sound");
+        }
+        }
+        IEnumerator Damage_Wait_sound()
+        {
+            gameManager.Sounddamage();
+            Damagewait = true;
+            yield return new WaitForSeconds(1.0f);
+            Damagewait = false;
+        }
+    private void Footsound() //歩いた時のSound
+        {
+            if (wait==false) {
+            StartCoroutine("Wait_sound");
+        }
+        }
+        IEnumerator Wait_sound()
+        {
+            gameManager.Soundfoot();
+            wait = true;
+            yield return new WaitForSeconds(0.5f);
+            wait = false;
+        }
+    private void RunFootsound() //走った時のSound
+        {
+            if (runwait==false) {
+            StartCoroutine("Run_Wait_sound");
+        }
+        }
+    IEnumerator Run_Wait_sound()
+        {
+            gameManager.Soundfoot();
+            runwait = true;
+            yield return new WaitForSeconds(0.2f);
+            runwait = false;
+        }
+    private void SlowFootsound() //遅歩きのSound
+        {
+            if (slowwait==false) {
+            StartCoroutine("Slow_Wait_sound");
+        }
+        }
+        IEnumerator Slow_Wait_sound()
+        {
+            gameManager.Soundfoot();
+            slowwait = true;
+            yield return new WaitForSeconds(0.8f);
+            slowwait = false;
+        }
 
     private void Update()
     {
+        if(damage) //ダメージ受けたとき
+        {
+            DamageSound();
+        }
         if(anim.GetBool("Die"))return;
         var isGrounded = _characterController.isGrounded;
         //着地状態の処理。ジャンプに関係
@@ -330,6 +390,18 @@ public class PlayerControllerWithCamera : MonoBehaviour
         //移動中何をするか
         if(_inputMove != Vector2.zero)
         {
+            if(aim)
+            {
+                SlowFootsound();
+            }
+            else if(run)
+            {
+                RunFootsound();
+            }
+            else
+            {
+                Footsound();
+            }
             walk = true;
             anim.SetBool("run", run);
             anim.SetBool("walk", walk);
