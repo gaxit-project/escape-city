@@ -11,6 +11,8 @@ TagManager:
   - weapon
   - item
   - cureitem
+  - arbinoEnemy
+  - canBreakStruct
   layers:
   - Default
   - TransparentFX

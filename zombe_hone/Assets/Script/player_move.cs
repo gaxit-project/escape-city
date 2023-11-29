@@ -352,6 +352,10 @@ public class PlayerControllerWithCamera : MonoBehaviour
         }
         else if (run&&_inputMove != Vector2.zero){
             Dash(250*Time.deltaTime);
+            GameObject[] arbinoenemy = GameObject.FindGameObjectsWithTag("arbinoEnemy");
+            foreach(GameObject obj in arbinoenemy){
+                obj.GetComponent<arbinoPatrol>().sound=6;
+            }
             moveVelocity = new Vector3(
                 _inputMove.x *weapon_speed*run_speed* _speed,
                 _verticalVelocity,

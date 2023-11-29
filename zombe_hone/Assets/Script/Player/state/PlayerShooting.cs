@@ -136,7 +136,7 @@ public class PlayerShootingsecond : MonoBehaviour
         }
         GameObject[] arbinoenemy = GameObject.FindGameObjectsWithTag("arbinoEnemy");
         foreach(GameObject obj in arbinoenemy){
-            obj.GetComponent<arbinoPatrol>().sound=20;
+            obj.GetComponent<arbinoPatrol>().sound=25;
         }
     }
 }

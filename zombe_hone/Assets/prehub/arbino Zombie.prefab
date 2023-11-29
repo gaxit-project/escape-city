@@ -159,9 +159,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 250
+  m_MaxValue: 350
   m_WholeNumbers: 0
-  m_Value: 250
+  m_Value: 350
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -536,7 +536,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &4617272477164583333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,8 +552,8 @@ MonoBehaviour:
   onDieCallback:
     m_PersistentCalls:
       m_Calls: []
-  lifemax: 250
-  life: 250
+  lifemax: 350
+  life: 350
   hpBar: {fileID: 2936813931757523261}
 --- !u!114 &3552903251189247283
 MonoBehaviour:
@@ -573,12 +573,12 @@ MonoBehaviour:
   - {fileID: 7476079793024837876, guid: abda6ea64e3a33c4796bb79528581c0f, type: 3}
   - {fileID: 6421783623287007183, guid: 38261deef8de50847bcf23fbf7884392, type: 3}
   - {fileID: 563854757707352077, guid: b7e25c4c75534184688eeea80589ea9c, type: 3}
-  itemHIRITU: 3582000036820000358200000000000000000000
-  changehiritu: 1
-  changeditemHIRITU: e457000010270000e4570000e4570000e4570000
-  maxtimer: 300
-  parcent: 50
-  changedparcent: 50
+  itemHIRITU: 00000000000000000000000050c3000050c30000
+  changehiritu: 0
+  changeditemHIRITU: 
+  maxtimer: 0
+  parcent: 100
+  changedparcent: 100
 --- !u!95 &7744311164823801600
 Animator:
   serializedVersion: 5
@@ -629,6 +629,7 @@ MonoBehaviour:
   destPoint: 0
   BikkuriCooltime: 3
   attackcooltime: 3
+  attackwait: 1
   soundtrakingtime: 10
   sound: 0
   trackingRange: 2
@@ -1553,13 +1554,13 @@ PrefabInstance:
       addedObject: {fileID: 4915041121981506031}
     - targetCorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1242252164623961975}
+      addedObject: {fileID: 4475133491617061301}
     - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3133293927829175594}
     - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8152850262608747996}
+      addedObject: {fileID: 4223366118710914647}
   m_SourcePrefab: {fileID: 100100000, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
 --- !u!4 &548431946683364925 stripped
 Transform:
@@ -1594,7 +1595,7 @@ CapsuleCollider:
   m_Height: 0.008
   m_Direction: 1
   m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &8152850262608747996
+--- !u!114 &4223366118710914647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1603,11 +1604,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2807283234776013606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
-  TestTrap: {fileID: 1242252164623961975}
+  arbP: {fileID: 7349338470805347594}
 --- !u!1 &6725853656173943708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
@@ -1636,7 +1636,7 @@ CapsuleCollider:
   m_Height: 0.008
   m_Direction: 1
   m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &1242252164623961975
+--- !u!114 &4475133491617061301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1645,11 +1645,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6725853656173943708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
-  TestTrap: {fileID: 8152850262608747996}
+  arbP: {fileID: 7349338470805347594}
 --- !u!1001 &9094253335803211414
 PrefabInstance:
   m_ObjectHideFlags: 0
