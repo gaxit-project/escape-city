@@ -43,23 +43,30 @@ public class CharacterStatusScript : MonoBehaviour
         }
         if (life <= 0)
         {
-            OnDie();
-            if(this.gameObject.CompareTag("Player"))
+            if(this.gameObject.CompareTag("Player")){
+                OnDie();
                 gameManager.Over();
-            else{
+            }
+            else if(this.gameObject.CompareTag("Enemy")||this.gameObject.CompareTag("arbinoEnemy")){
+                OnDie();
                 gameManager.scoreUpdate(30);
                 GetComponent<DieandDrop>().Drop();
-                GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
-            Vector3 newPosition = transform.position;newPosition.y = 0.6f;//ここで埋まる位置を決めいている
-            transform.position = newPosition;
-            player_Item.DefeatEnemy();
+                //GetComponent<Patrol>().stopmove=true;
+
+                Vector3 newPosition = transform.position;newPosition.y = 0.6f;//ここで埋まる位置を決めいている
+                transform.position = newPosition;
+                player_Item.DefeatEnemy();
+
                 anim.SetBool("Z_Die", true);
                 Invoke("destroy",2f);
+            }else{
+                Invoke("destroy",0.3f);
             }
         }else{
-            if(this.gameObject.CompareTag("Player")){}else{
-            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=false;
-            StartCoroutine(ResumeAfterDelay(0.5f));
+            if(this.gameObject.CompareTag("Player")){
+            }else if(this.gameObject.CompareTag("Enemy")){
+                GetComponent<Patrol>().stopmove=true;
+                StartCoroutine(ResumeAfterDelay(0.5f));
             }
         }
     }
@@ -89,6 +96,6 @@ public class CharacterStatusScript : MonoBehaviour
         yield return new WaitForSeconds(delay); // 指定時間待機する
 
         anim.speed = 1f;
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        GetComponent<Patrol>().stopmove = false;
     }
 }

@@ -24,6 +24,7 @@ public class TimerScript : MonoBehaviour {
 	}
  
 	void Update () {
+        if(gameManager.overcount)return;
         if(minute<=0&&seconds<=0f){
             seconds=0f;
             minute=0;

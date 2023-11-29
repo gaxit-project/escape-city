@@ -17,6 +17,18 @@ public class EnemyHit : MonoBehaviour
             status.Damage(GetComponent<WeaponStates>().damage);
             StartCoroutine("E_Damage");
         }
+        if (other.CompareTag("arbinoEnemy")&&wait!=true)
+        {
+            var status = other.GetComponent<CharacterStatusScript>();
+            status.Damage(GetComponent<WeaponStates>().damage);
+            StartCoroutine("E_Damage");
+        }
+        if (other.CompareTag("canBreakStruct")&&wait!=true)
+        {
+            var status = other.GetComponent<CharacterStatusScript>();
+            status.Damage(GetComponent<WeaponStates>().damage);
+            StartCoroutine("E_Damage");
+        }
     }
     IEnumerator E_Damage()
     {

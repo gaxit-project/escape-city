@@ -134,5 +134,9 @@ public class PlayerShootingsecond : MonoBehaviour
         foreach(GameObject obj in enemy){
             obj.GetComponent<Patrol>().sound=15;
         }
+        GameObject[] arbinoenemy = GameObject.FindGameObjectsWithTag("arbinoEnemy");
+        foreach(GameObject obj in arbinoenemy){
+            obj.GetComponent<arbinoPatrol>().sound=20;
+        }
     }
 }

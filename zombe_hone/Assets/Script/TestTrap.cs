@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class TestTrapScript : MonoBehaviour
 {
-    private bool wait=false;
+    public bool wait=false;
+    public TestTrapScript TestTrap;
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")&&wait==false)
+        if (other.CompareTag("Player")&&!TestTrap.wait&&!wait)
         {
+            wait=true;
             var status = other.GetComponent<CharacterStatusScript>();
             var move = other.GetComponent<PlayerControllerWithCamera>();
             status.Damage(10);
@@ -20,7 +22,6 @@ public class TestTrapScript : MonoBehaviour
 
     IEnumerator E_Damage()
     {
-        wait=true;
         yield return new WaitForSeconds(1);
         wait=false;
     }

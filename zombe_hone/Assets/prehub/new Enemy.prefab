@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0e4a430329a03458709649a1365dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopmove: 0
   bikkuri: {fileID: 3468285411222254413, guid: bb7a9e136e4af4347a018ce23b000c29, type: 3}
   points: []
   destPoint: 0
@@ -273,7 +274,7 @@ MonoBehaviour:
   sound: 0
   trackingRange: 1
   quitRange: 8
-  atackRange: 3
+  atackRange: 1
   _sightAngle: 120
   tracking: 0
 --- !u!114 &2194917395375652056
@@ -961,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6535966611668304912, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6535966611668304912, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1148,7 +1149,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1168,6 +1169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wait: 0
+  TestTrap: {fileID: 737912016813975534}
 --- !u!4 &6198239356302853803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6535966611668304912, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
@@ -1193,7 +1196,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1213,6 +1216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wait: 0
+  TestTrap: {fileID: 8710652710255225739}
 --- !u!1001 &6718252528507894211
 PrefabInstance:
   m_ObjectHideFlags: 0

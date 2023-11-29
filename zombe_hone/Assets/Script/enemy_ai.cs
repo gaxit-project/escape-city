@@ -9,6 +9,7 @@ using UnityEngine.AI;
 
 public class Patrol : MonoBehaviour
 {
+    public bool stopmove=false;
     public GameObject bikkuri; 
     public Transform[] points;
     [SerializeField] int destPoint = 0;
@@ -63,10 +64,17 @@ public class Patrol : MonoBehaviour
 
     void Update()
     {
-        if(anim.GetBool("Z_Die"))return;
+        if(anim.GetBool("Z_Die")){
+            agent.destination=transform.position;
+            return;
+        }
+        timeforcool+=Time.deltaTime;
+        if(stopmove){
+            agent.destination=transform.position;
+            return;
+        }
         playerPos = player.transform.position;
         distance = Vector3.Distance(this.transform.position, playerPos);
-        timeforcool+=Time.deltaTime;
         if(distance>30)return;
         bool sightjudge=IsVisible();
         //Player�Ƃ��̃I�u�W�F�N�g�̋����𑪂�

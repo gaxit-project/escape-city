@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public FadeScript Fadepanel;
     public bool mainmenufanction=true;
     private int itemnum;
+    public bool overcount=false;
+    private bool Gameclear=false;
     
     
     void Start()
@@ -90,13 +92,18 @@ public class GameManager : MonoBehaviour
 
     public void Over()
     {
+        if(Gameclear)return;
+        if(overcount)return;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioGameOver.Play();
         GameOver.SetActive(true);
         virtalmouse.SetActive(true);
         Cursor.SetActive(true);
+        overcount=true;
     }
     public void GameClear(){
+        if(overcount)return;
+        Gameclear=true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioCliar.Play();
         Clear.SetActive(true);
@@ -137,6 +144,7 @@ public class GameManager : MonoBehaviour
         score.GetComponent<MenuScoreManager>().ScoreUpdate(add);
     }
     public void movieStart(){
+        overcount=true;
         Fadepanel.Fadein=true;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(keepCanvas);
@@ -152,5 +160,6 @@ public class GameManager : MonoBehaviour
         SceneManager.MoveGameObjectToScene(keepCanvas, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(virtalmouse, SceneManager.GetActiveScene());
         Fadepanel.Fadeout=true;
+        overcount=false;
     }
 }

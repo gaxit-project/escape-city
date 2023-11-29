@@ -459,6 +459,8 @@
 "Assets/nomura/Player/ごみ/players.cs"
 "Assets/nomura/PlayerControll.cs"
 "Assets/Scenes/scoredata.cs"
+"Assets/Script/arbino Patrol.cs"
+"Assets/Script/ArbinoAtack.cs"
 "Assets/Script/bakudanfall.cs"
 "Assets/Script/DieandDrop.cs"
 "Assets/Script/enemy_ai.cs"
