@@ -4,6 +4,7 @@ using UnityEngine;
 //NavMeshAgent�g���Ƃ��ɕK�v
 using UnityEngine.AI;
 
+
 //�I�u�W�F�N�g��NavMeshAgent�R���|�[�l���g��ݒu
 [RequireComponent(typeof(NavMeshAgent))]
 
@@ -21,11 +22,13 @@ public class Patrol : MonoBehaviour
     Vector3 playerPos;
     GameObject player;
     float distance;
+    private float origenalspeed;
     [SerializeField] float trackingRange = 3f;
     [SerializeField] float quitRange = 5f;
     [SerializeField] float atackRange = 3f;
     public float _sightAngle = 30f;
     [SerializeField] bool tracking = false;
+    bool attackwait=false;
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class Patrol : MonoBehaviour
         //�ǐՂ������I�u�W�F�N�g�̖��O������
         player = GameObject.Find("Player");
         timeforcool=cooltime;
+        origenalspeed=agent.speed;
     }
 
 
@@ -88,7 +92,7 @@ public class Patrol : MonoBehaviour
             }
             if (distance < atackRange)
             {
-                anim.SetTrigger("Z_atack");
+                if(!attackwait)anim.SetTrigger("Z_atack");
             }
             //Player��ڕW�Ƃ���
             if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh) {
@@ -124,11 +128,11 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
             //Debug.Log(agent.velocity.magnitude);
-            if(agent.velocity.magnitude > 0){
-                anim.SetBool("move", true);
-            }else{
-                anim.SetBool("move", false);
-            }
+        }
+        if(agent.velocity.magnitude > 0){
+            anim.SetBool("move", true);
+        }else{
+            anim.SetBool("move", false);
         }
         sound=0;
     }
@@ -175,5 +179,27 @@ public class Patrol : MonoBehaviour
         // Cubeプレハブを元に、インスタンスを生成
         Instantiate (bikkuri, new Vector3(this.transform.position.x,this.transform.position.y+0.2f,this.transform.position.z), Quaternion.identity);
         timeforcool=0f;
+    }
+    void Stop(){
+        stopmove=true;
+        anim.SetBool("move",false);
+        anim.SetBool("run",false);
+    }
+    void completeStandUp(){
+        stopmove=false;
+        changespeed(1.0f);
+        anim.SetBool("stan",false);
+        attackwait=false;
+    }
+    void Run(float runspeed){
+        anim.SetBool("run",true);
+        changespeed(runspeed);
+    }
+    void StartNurceAttack(){
+        anim.SetBool("stan",true);
+        attackwait=true;
+    }
+    void changespeed(float speed){
+        agent.speed=speed*origenalspeed;
     }
 }

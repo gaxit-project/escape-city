@@ -66,7 +66,7 @@ public class CharacterStatusScript : MonoBehaviour
             if(this.gameObject.CompareTag("Player")){
             }else if(this.gameObject.CompareTag("Enemy")){
                 GetComponent<Patrol>().stopmove=true;
-                StartCoroutine(ResumeAfterDelay(0.5f));
+                StartCoroutine(ResumeAfterDelay(0.1f));
             }
         }
     }
