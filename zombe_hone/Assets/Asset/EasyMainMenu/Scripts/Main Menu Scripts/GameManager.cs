@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     public bool mainmenufanction=true;
     private int itemnum;
     public bool overcount=false;
-    private bool Gameclear=false;
+    private bool gameclear=false;
+    public TimerScript timer;
     
     
     void Start()
@@ -92,18 +93,22 @@ public class GameManager : MonoBehaviour
 
     public void Over()
     {
-        if(Gameclear)return;
+        if(gameclear)return;
         if(overcount)return;
+        overcount=true;
+        timer.timerstop=true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioGameOver.Play();
         GameOver.SetActive(true);
         virtalmouse.SetActive(true);
         Cursor.SetActive(true);
-        overcount=true;
     }
     public void GameClear(){
         if(overcount)return;
-        Gameclear=true;
+        if(gameclear)return;
+        gameclear=true;
+        timer.timerstop=true;
+        timer.AddScore();
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioCliar.Play();
         Clear.SetActive(true);

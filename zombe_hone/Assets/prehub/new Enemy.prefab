@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 2194917395375652056}
   - component: {fileID: 238541520706720309}
   - component: {fileID: 625719100994462353}
+  - component: {fileID: 4109862619787705392}
   m_Layer: 7
   m_Name: new Enemy
   m_TagString: Enemy
@@ -334,6 +335,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44efeaa185d2c9d49b0a44a1aa31781b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4109862619787705392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144447869711805988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1682a6789c220944aacde3106e10437e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testTrap: {fileID: 8710652710255225739}
 --- !u!1 &4523496952901237054
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +510,6 @@ GameObject:
   - component: {fileID: 2707740653852372373}
   - component: {fileID: 5024088818494880440}
   - component: {fileID: 6435873494058988514}
-  - component: {fileID: 8891057184100614749}
   - component: {fileID: 5104575177720728705}
   m_Layer: 7
   m_Name: Canvas
@@ -588,18 +601,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8891057184100614749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512671191735664053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20e51c086d7bd0449485e3387fea691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5104575177720728705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,8 +1170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
+  wait: 1
   TestTrap: {fileID: 737912016813975534}
+  attackdamage: 10
 --- !u!4 &6198239356302853803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6535966611668304912, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
@@ -1216,8 +1218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
+  wait: 1
   TestTrap: {fileID: 8710652710255225739}
+  attackdamage: 10
 --- !u!1001 &6718252528507894211
 PrefabInstance:
   m_ObjectHideFlags: 0

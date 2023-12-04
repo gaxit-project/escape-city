@@ -1745,6 +1745,13 @@ AnimationClip:
     floatParameter: 2.5
     intParameter: 0
     messageOptions: 0
+  - time: 1
+    functionName: startTrap
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2
     functionName: changespeed
     data: 
@@ -1754,6 +1761,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2.7333333
     functionName: Stop
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.7333333
+    functionName: endTrap
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

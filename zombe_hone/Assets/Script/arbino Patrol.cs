@@ -18,7 +18,7 @@ public class arbinoPatrol : MonoBehaviour
     public float attackcooltime=3;
     private float timeforcool;
     private float timeforatackcool;
-    public bool attackwait=true;
+    //public bool attackwait=true;
     private float timeforsound;
     public float soundtrakingtime=10f;
     public float sound=0;
@@ -84,7 +84,7 @@ public class arbinoPatrol : MonoBehaviour
             anim.SetBool("move", false);
             return;
         }
-        attackwait=true;
+        //attackwait=true;
         playerPos = player.transform.position;
         distance = Vector3.Distance(this.transform.position, playerPos);
         timeforcool+=Time.deltaTime;
@@ -105,7 +105,7 @@ public class arbinoPatrol : MonoBehaviour
             {
                 anim.SetTrigger("Z_atack");
                 timeforatackcool=0f;
-                attackwait=false;
+                //attackwait=false;
             }
             //Player��ڕW�Ƃ���
             if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh) {

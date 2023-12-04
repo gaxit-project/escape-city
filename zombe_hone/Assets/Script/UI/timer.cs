@@ -15,6 +15,7 @@ public class TimerScript : MonoBehaviour {
 	//　前のUpdateの時の秒数
 	private float oldSeconds;
     private GameManager gameManager;
+    public bool timerstop;
  
 	void Start () {
 		//minute = 10;
@@ -24,7 +25,7 @@ public class TimerScript : MonoBehaviour {
 	}
  
 	void Update () {
-        if(gameManager.overcount)return;
+        if(timerstop)return;
         if(minute<=0&&seconds<=0f){
             seconds=0f;
             minute=0;
@@ -50,4 +51,7 @@ public class TimerScript : MonoBehaviour {
         }
 		oldSeconds = seconds;
 	}
+    public void AddScore(){
+        gameManager.scoreUpdate(((minute*60)+(int)seconds)*10);
+    }
 }

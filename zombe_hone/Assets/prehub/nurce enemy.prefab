@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 2194917395375652056}
   - component: {fileID: 238541520706720309}
   - component: {fileID: 625719100994462353}
+  - component: {fileID: 7406760269864815368}
   m_Layer: 7
   m_Name: nurce enemy
   m_TagString: Enemy
@@ -334,6 +335,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44efeaa185d2c9d49b0a44a1aa31781b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7406760269864815368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144447869711805988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1682a6789c220944aacde3106e10437e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testTrap: {fileID: 6569481150849502125}
 --- !u!1 &4523496952901237054
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
+  wait: 1
   TestTrap: {fileID: 6569481150849502125}
+  attackdamage: 20
 --- !u!4 &430022854672377488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9055930119030893435, guid: 3891951746aa4cf439d964c9fc468bdd, type: 3}
@@ -874,8 +889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0
+  wait: 1
   TestTrap: {fileID: 7890031638652766077}
+  attackdamage: 20
 --- !u!1001 &9171540032531885383
 PrefabInstance:
   m_ObjectHideFlags: 0

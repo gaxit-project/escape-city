@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 7744311164823801600}
   - component: {fileID: 7742764737565582697}
   - component: {fileID: 7349338470805347594}
+  - component: {fileID: 569455612400234228}
   m_Layer: 7
   m_Name: arbino Zombie
   m_TagString: arbinoEnemy
@@ -629,7 +630,6 @@ MonoBehaviour:
   destPoint: 0
   BikkuriCooltime: 3
   attackcooltime: 3
-  attackwait: 1
   soundtrakingtime: 10
   sound: 0
   trackingRange: 2
@@ -637,6 +637,19 @@ MonoBehaviour:
   atackRange: 0.8
   _sightAngle: 30
   tracking: 0
+--- !u!114 &569455612400234228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112731702776152391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1682a6789c220944aacde3106e10437e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testTrap: {fileID: 380977858575741624}
 --- !u!1001 &6712616285014077997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1554,13 +1567,13 @@ PrefabInstance:
       addedObject: {fileID: 4915041121981506031}
     - targetCorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4475133491617061301}
+      addedObject: {fileID: 380977858575741624}
     - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3133293927829175594}
     - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4223366118710914647}
+      addedObject: {fileID: 4074859835357103813}
   m_SourcePrefab: {fileID: 100100000, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
 --- !u!4 &548431946683364925 stripped
 Transform:
@@ -1595,7 +1608,7 @@ CapsuleCollider:
   m_Height: 0.008
   m_Direction: 1
   m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &4223366118710914647
+--- !u!114 &4074859835357103813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1604,10 +1617,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2807283234776013606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
+  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arbP: {fileID: 7349338470805347594}
+  wait: 1
+  TestTrap: {fileID: 380977858575741624}
+  attackdamage: 30
 --- !u!1 &6725853656173943708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
@@ -1636,7 +1651,7 @@ CapsuleCollider:
   m_Height: 0.008
   m_Direction: 1
   m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &4475133491617061301
+--- !u!114 &380977858575741624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1645,10 +1660,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6725853656173943708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
+  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arbP: {fileID: 7349338470805347594}
+  wait: 1
+  TestTrap: {fileID: 4074859835357103813}
+  attackdamage: 30
 --- !u!1001 &9094253335803211414
 PrefabInstance:
   m_ObjectHideFlags: 0

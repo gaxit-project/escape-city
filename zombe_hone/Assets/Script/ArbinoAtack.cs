@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArbinoAtack : MonoBehaviour
 {
-    public arbinoPatrol arbP;
+    /*public arbinoPatrol arbP;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")&&!arbP.attackwait)
@@ -16,5 +16,5 @@ public class ArbinoAtack : MonoBehaviour
             move.P_Damage();
         }
         
-    }
+    }*/
 }
