@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public AudioSource footwalk;
     public AudioSource swing;
     public AudioSource damagesound;
+    public AudioSource bikkurisound;
+    public AudioSource zombiesound;
     private GameObject mousemem;
     private RectTransform rectTransform;
     private GameObject brige;
@@ -140,6 +142,14 @@ public class GameManager : MonoBehaviour
     public void Sounddamage()
     {
         damagesound.Play();
+    }
+    public void SoundBikkuri()
+    {
+        bikkurisound.PlayOneShot(bikkurisound.clip);
+    }
+    public void SoundZombieSound()
+    {
+        zombiesound.PlayOneShot(zombiesound.clip, 1 / Patrol.distance);
     }
     public void taskUpdate(int count){
         itemnum=count;

@@ -10,6 +10,7 @@ using UnityEngine.AI;
 
 public class Patrol : MonoBehaviour
 {
+    private GameManager gameManager;
     public bool stopmove=false;
     public GameObject bikkuri; 
     public Transform[] points;
@@ -21,17 +22,20 @@ public class Patrol : MonoBehaviour
     public float sound=0;
     Vector3 playerPos;
     GameObject player;
-    float distance;
+    public static float distance;
     private float origenalspeed;
     [SerializeField] float trackingRange = 3f;
     [SerializeField] float quitRange = 5f;
     [SerializeField] float atackRange = 3f;
+    private float soundRange = 10f;
     public float _sightAngle = 30f;
     [SerializeField] bool tracking = false;
     bool attackwait=false;
+    private bool zombiewait;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -64,6 +68,19 @@ public class Patrol : MonoBehaviour
         // �K�v�Ȃ�Ώo���n�_�ɂ��ǂ�܂�
         destPoint = (destPoint + 1) % points.Length;
     }
+     private void ZombieSound() //ゾンビの鳴き声Sound
+        {
+            if (zombiewait==false) {
+            StartCoroutine("Zombie_Wait_sound");
+        }
+        }
+        IEnumerator Zombie_Wait_sound()
+        {
+            gameManager.SoundZombieSound();
+            zombiewait = true;
+            yield return new WaitForSeconds(4.0f);
+            zombiewait = false;
+        }
 
 
     void Update()
@@ -82,6 +99,11 @@ public class Patrol : MonoBehaviour
         if(distance>30)return;
         bool sightjudge=IsVisible();
         //Player�Ƃ��̃I�u�W�F�N�g�̋����𑪂�
+
+         if(distance < soundRange)
+        {
+            ZombieSound();
+        }
 
         if (tracking)
         {
@@ -177,6 +199,7 @@ public class Patrol : MonoBehaviour
     void Summonbikkuri(){
         if(timeforcool<cooltime)return;
         // Cubeプレハブを元に、インスタンスを生成
+        gameManager.SoundBikkuri();
         Instantiate (bikkuri, new Vector3(this.transform.position.x,this.transform.position.y+0.2f,this.transform.position.z), Quaternion.identity);
         timeforcool=0f;
     }

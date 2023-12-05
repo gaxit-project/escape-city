@@ -43,6 +43,16 @@ public class PauseMenuController : MonoBehaviour
         GameOptions.SetActive(false);
         Cursor.SetActive(false);
     }
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        audioSource.Play();
+        Invoke("ResetScene",0.1f);
+    }
+    void ResetScene()
+    {
+        SceneManager.LoadScene("Main");
+    }
     
     public void Quit()
     {   
