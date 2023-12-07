@@ -415,8 +415,8 @@ MonoBehaviour:
   changehiritu: 1
   changeditemHIRITU: e457000010270000e4570000e4570000e4570000
   maxtimer: 300
-  parcent: 50
-  changedparcent: 50
+  parcent: 60
+  changedparcent: 60
 --- !u!95 &3650371844120070563
 Animator:
   serializedVersion: 5

@@ -7,6 +7,8 @@ using TMPro;
 public class MenuScoreManager : MonoBehaviour {
     [SerializeField]
     private TextMeshProUGUI cardNameText;
+    [SerializeField]
+    private TextMeshProUGUI cardNameText2;
     public bool scoreRock=false;
     public int score_num = 0; // スコア変数
     public string[] str_list;
@@ -43,7 +45,7 @@ public class MenuScoreManager : MonoBehaviour {
     public void Allscoreoutput(){
         cardNameText.text ="Score:" + score_num;
         for(int i=0;i<score_list.Length;i++){
-          cardNameText.text+="\n"+score_list[i]+"  "+str_list[i];
+          cardNameText2.text+=score_list[i]+"  "+str_list[i]+"\n";
         }
     }
 }

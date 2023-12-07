@@ -86,7 +86,7 @@ public class GuidMasage : MonoBehaviour
         Mission_List[index].clear=clearr;
     }
     public void AddScore(){
-        for(int i=0;i<Mission_List.Length;i++){
+        for(int i=1;i<Mission_List.Length;i++){
             if(Mission_List[i].achievement==Mission_List[i].achievementmax){
                 gameManager.scoreUpdate(3000,"住民を救出して街を脱出");
             }

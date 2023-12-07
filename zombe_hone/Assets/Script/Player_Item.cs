@@ -12,6 +12,8 @@ public class Player_Item : MonoBehaviour
     public bulletLvUI bUI;
     public sordLvUI sUI;
 
+    public GameObject villager;
+
     public void Start()
     {
         gunParticles = GetComponent<ParticleSystem> ();
@@ -65,8 +67,14 @@ public class Player_Item : MonoBehaviour
         }else if(other.CompareTag("cureitem")){
             var pick = other.GetComponent<PickUpObject>();
             if(pick.Cure()){
+                if(villager!=null){
+                    if(villager.GetComponent<villager_ai>().tracking){
+                        villager.GetComponent<CharacterStatusScript>().Cure(40);
+                    }
+                }
                 gameManager.Sounditem();
                 GetComponent<CharacterStatusScript>().Cure(30);
+
             }
         }
     }

@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     public bool overcount=false;
     private bool gameclear=false;
     public TimerScript timer;
-    public villager_ai vil_ai;
     
     
     void Start()
