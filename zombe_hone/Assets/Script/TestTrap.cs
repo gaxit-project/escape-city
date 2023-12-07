@@ -23,10 +23,10 @@ public class TestTrapScript : MonoBehaviour
         {
             wait=true;
             var status = other.GetComponent<CharacterStatusScript>();
-            var move = other.GetComponent<PlayerControllerWithCamera>();
+            //var move = other.GetComponent<PlayerControllerWithCamera>();
             status.Damage(attackdamage);
             //StartCoroutine("E_Damage");
-            move.P_Damage();
+            //move.P_Damage();
         }
         
     }

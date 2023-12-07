@@ -10,6 +10,7 @@ using UnityEngine.AI;
 
 public class villager_ai : MonoBehaviour
 {
+    private GameManager gameManager;
     public bool stopmove=false;
     public GameObject bikkuri; 
     public Transform[] points;
@@ -27,11 +28,12 @@ public class villager_ai : MonoBehaviour
     [SerializeField] float quitRange = 5f;
     [SerializeField] float atackRange = 3f;
     //public float _sightAngle = 30f;
-    [SerializeField] bool tracking = false;
+    public bool tracking = false;
     public bool attackwait=false;
-
+    
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -86,6 +88,7 @@ public class villager_ai : MonoBehaviour
             if (distance > quitRange)
             {
                 tracking = false;
+                gameManager.subtaskUpdate(0);
             }
             /*if (distance < atackRange)
             {
@@ -101,6 +104,7 @@ public class villager_ai : MonoBehaviour
             //Player��trackingRange���߂Â�����ǐՊJ�n
             if (distance < trackingRange){
                 tracking = true;
+                gameManager.subtaskUpdate(1);
                 //Summonbikkuri();
             }
 
@@ -137,7 +141,6 @@ public class villager_ai : MonoBehaviour
                         timeforcool=0f;
                         agent.destination = obj.transform.position;
                         transform.LookAt(new Vector3(obj.transform.position.x,transform.position.y,obj.transform.position.z));
-
                     }
                 }else{//攻撃中
                     transform.LookAt(new Vector3(obj.transform.position.x,transform.position.y,obj.transform.position.z));

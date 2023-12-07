@@ -47,7 +47,7 @@ public class Player_Item : MonoBehaviour
         else if (other.CompareTag("BlockItem") && canCollectBlock)
         {
             Destroy(other.gameObject); // ブロックアイテムを削除
-            gameManager.scoreUpdate(1000);
+            gameManager.scoreUpdate(1000,"街から脱出!");
             gameManager.GameClear();
             GetComponent<CapsuleCollider>().enabled = false;
         }
@@ -75,7 +75,7 @@ public class Player_Item : MonoBehaviour
             if(sphereItemCount>0){
                 sphereItemCount--;
                 gameManager.taskUpdate(sphereItemCount);
-                gameManager.scoreUpdate(-500);
+                gameManager.scoreUpdate(-500,"キーアイテムを失った");
                 print("LOST");
                 itemlost=true;
             }
@@ -84,7 +84,7 @@ public class Player_Item : MonoBehaviour
         if (itemlost) {
             sphereItemCount++; // アイテムを取り戻す
             gameManager.taskUpdate(sphereItemCount);
-            gameManager.scoreUpdate(500); 
+            gameManager.scoreUpdate(500,"キーアイテムを取り戻した"); 
             itemlost=false;
             print("RETURN");
         }

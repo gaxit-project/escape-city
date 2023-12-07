@@ -28,7 +28,7 @@ public class kirakira : MonoBehaviour
             }
             Destroy(gameObject);
             gameManager.taskUpdate(count);
-            gameManager.scoreUpdate(500);
+            gameManager.scoreUpdate(500,"キーアイテムを入手");
         }
         gorl+=Camera.main.gameObject.transform.position-pastcameratrans;
         transform.position+=Camera.main.gameObject.transform.position-pastcameratrans;

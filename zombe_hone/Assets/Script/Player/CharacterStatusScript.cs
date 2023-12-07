@@ -47,15 +47,28 @@ public class CharacterStatusScript : MonoBehaviour
                 OnDie();
                 gameManager.Over();
             }
-            else if(this.gameObject.CompareTag("Enemy")||this.gameObject.CompareTag("arbinoEnemy")||this.gameObject.CompareTag("villager")){
+            else if(this.gameObject.CompareTag("Enemy")||this.gameObject.CompareTag("arbinoEnemy")){
                 OnDie();
-                gameManager.scoreUpdate(30);
+                gameManager.scoreUpdate(30,"ゾンビを倒した");
                 GetComponent<DieandDrop>().Drop();
                 //GetComponent<Patrol>().stopmove=true;
 
                 Vector3 newPosition = transform.position;newPosition.y = 0.6f;//ここで埋まる位置を決めいている
                 transform.position = newPosition;
                 player_Item.DefeatEnemy();
+
+                anim.SetBool("Z_Die", true);
+                Invoke("destroy",2f);
+            }else if(this.gameObject.CompareTag("villager")){
+                OnDie();
+                gameManager.subtaskUpdate(0);
+                //gameManager.scoreUpdate(30);
+                //GetComponent<DieandDrop>().Drop();
+                //GetComponent<Patrol>().stopmove=true;
+
+                Vector3 newPosition = transform.position;newPosition.y = 0.6f;//ここで埋まる位置を決めいている
+                transform.position = newPosition;
+                //player_Item.DefeatEnemy();
 
                 anim.SetBool("Z_Die", true);
                 Invoke("destroy",2f);

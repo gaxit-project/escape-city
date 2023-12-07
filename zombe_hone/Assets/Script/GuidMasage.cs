@@ -8,28 +8,30 @@ public class GuidMasage : MonoBehaviour
 {
     public struct Mission
     {
-    public int achievement;
-    public int achievementmax;
-    public string mission;
-    public bool outputdistance;
-    public Transform targettrans;
-    public bool clear;
+    public int achievement; //経過状態
+    public int achievementmax; //最大値
+    public string mission; //ミッション内容
+    public bool outputdistance; //距離出力
+    public Transform targettrans; //距離出力対象
+    public bool clear; //クリア状態なら非表示
     }
     [SerializeField]
     private TextMeshProUGUI cardNameText;
     public Mission[] Mission_List; 
     private int pastkeynum;
     Transform Playertrans;
-    public Transform Targettrans;
+    public GameObject target;
+    private GameManager gameManager;
       // 初期化
     void Start(){
+        gameManager = FindObjectOfType<GameManager>();
         //System.Array.Resize<Mission>(ref Mission_List, Mission_List.Length+1);
         Playertrans=GameObject.Find("Player").transform;
         Mission_List=new Mission[1];
         Mission_List[Mission_List.Length - 1].achievement = 0;
         Mission_List[Mission_List.Length - 1].achievementmax=0;
         Mission_List[Mission_List.Length - 1].mission="サブミッション";
-        //AddMission(0,0,"住民を助ける",true,Targettrans);
+        AddMission(0,1,"住民を助ける",true,target.transform);
         MesageUpdate(0);
     }
     void Update(){
@@ -66,12 +68,28 @@ public class GuidMasage : MonoBehaviour
         }
         cardNameText.text=str;
     }
-    public void AddMission(int num,int nummax,string str,bool distanceon,Transform target){
+    public int AddMission(int num,int nummax,string str,bool distanceon,Transform target){
         System.Array.Resize<Mission>(ref Mission_List, Mission_List.Length+1);
         Mission_List[Mission_List.Length - 1].achievement = num;
         Mission_List[Mission_List.Length - 1].achievementmax=nummax;
         Mission_List[Mission_List.Length - 1].mission=str;
         Mission_List[Mission_List.Length - 1].outputdistance=distanceon;
         Mission_List[Mission_List.Length - 1].targettrans=target;
+        return Mission_List.Length - 1;
+    }
+    public void ChangeMission(int index, int num,int nummax,string str,bool distanceon,Transform target,bool clearr){
+        Mission_List[index].achievement = num;
+        Mission_List[index].achievementmax=nummax;
+        Mission_List[index].mission=str;
+        Mission_List[index].outputdistance=distanceon;
+        Mission_List[index].targettrans=target;
+        Mission_List[index].clear=clearr;
+    }
+    public void AddScore(){
+        for(int i=0;i<Mission_List.Length;i++){
+            if(Mission_List[i].achievement==Mission_List[i].achievementmax){
+                gameManager.scoreUpdate(3000,"住民を救出して街を脱出");
+            }
+        }
     }
 }

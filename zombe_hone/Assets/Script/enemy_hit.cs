@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+//using System.Threading;
 
 public class EnemyHit : MonoBehaviour
 {

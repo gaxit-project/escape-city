@@ -52,6 +52,6 @@ public class TimerScript : MonoBehaviour {
 		oldSeconds = seconds;
 	}
     public void AddScore(){
-        gameManager.scoreUpdate(((minute*60)+(int)seconds)*10);
+        gameManager.scoreUpdate(((minute*60)+(int)seconds)*10,"脱出時残り時間ボーナス");
     }
 }

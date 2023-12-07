@@ -13,6 +13,11 @@ TagManager:
   - cureitem
   - arbinoEnemy
   - canBreakStruct
+  - stealingpoint
+  - sittingpoint
+  - pickuppoint
+  - waypoint
+  - villager
   layers:
   - Default
   - TransparentFX

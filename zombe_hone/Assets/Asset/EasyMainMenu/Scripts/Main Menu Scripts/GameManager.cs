@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public bool overcount=false;
     private bool gameclear=false;
     public TimerScript timer;
+    public villager_ai vil_ai;
     
     
     void Start()
@@ -99,6 +100,9 @@ public class GameManager : MonoBehaviour
         if(overcount)return;
         overcount=true;
         timer.timerstop=true;
+        task.SetActive(false);
+        score.GetComponent<MenuScoreManager>().Allscoreoutput();
+        score.GetComponent<MenuScoreManager>().scoreRock=true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioGameOver.Play();
         GameOver.SetActive(true);
@@ -111,6 +115,10 @@ public class GameManager : MonoBehaviour
         gameclear=true;
         timer.timerstop=true;
         timer.AddScore();
+        task.GetComponent<GuidMasage>().AddScore();
+        task.SetActive(false);
+        score.GetComponent<MenuScoreManager>().Allscoreoutput();
+        score.GetComponent<MenuScoreManager>().scoreRock=true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
         audioCliar.Play();
         Clear.SetActive(true);
@@ -155,8 +163,17 @@ public class GameManager : MonoBehaviour
         itemnum=count;
         task.GetComponent<GuidMasage>().MesageUpdate(itemnum);
     }
-    public void scoreUpdate(int add){
-        score.GetComponent<MenuScoreManager>().ScoreUpdate(add);
+    public void subtaskUpdate(int ach){
+        if(ach>=1){
+            task.GetComponent<GuidMasage>().Mission_List[1].outputdistance=false;
+            task.GetComponent<GuidMasage>().Mission_List[1].achievement=1;
+        }else{
+            task.GetComponent<GuidMasage>().Mission_List[1].outputdistance=true;
+            task.GetComponent<GuidMasage>().Mission_List[1].achievement=0;
+        }
+    }
+    public void scoreUpdate(int add,string strings){
+        score.GetComponent<MenuScoreManager>().ScoreUpdate(add,strings);
     }
     public void movieStart(){
         overcount=true;

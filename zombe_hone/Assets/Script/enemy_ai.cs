@@ -17,6 +17,8 @@ public class Patrol : MonoBehaviour
     [SerializeField] int destPoint = 0;
     private NavMeshAgent agent;
     Animator anim;
+    float haikaicooltime=3;
+    float timeforhaikai=0;
     public float cooltime=3;
     private float timeforcool;
     public float sound=0;
@@ -32,6 +34,11 @@ public class Patrol : MonoBehaviour
     [SerializeField] bool tracking = false;
     bool attackwait=false;
     private bool zombiewait;
+    bool nockback=false;
+    float nocktime2;
+    Vector3 nockpoint;
+    Vector3 nockvec;
+    float nocktime;
 
     void Start()
     {
@@ -89,7 +96,19 @@ public class Patrol : MonoBehaviour
             agent.destination=transform.position;
             return;
         }
+        timeforhaikai+=Time.deltaTime;
         timeforcool+=Time.deltaTime;
+        if(nockback){
+            agent.destination=transform.position;
+            nocktime2+=Time.deltaTime;
+            if(nocktime2<=nocktime){
+                transform.position += nockvec*(1/nocktime)*Time.deltaTime;
+            }else{
+                transform.position = nockpoint;
+                nockback=false;
+            }
+            return;
+        }
         if(stopmove){
             agent.destination=transform.position;
             return;
@@ -147,9 +166,26 @@ public class Patrol : MonoBehaviour
 
             // �G�[�W�F���g�����ڕW�n�_�ɋ߂Â��Ă�����A
             // ���̖ڕW�n�_��I�����܂�
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            if (!agent.pathPending && agent.remainingDistance < 0.5f&&haikaicooltime<timeforhaikai){
                 GotoNextPoint();
+                haikaicooltime=Random.Range(3f,6f);
+                timeforhaikai=0f;
+            }
             //Debug.Log(agent.velocity.magnitude);
+        }
+        GameObject[] villager = GameObject.FindGameObjectsWithTag("villager");
+        foreach(GameObject obj in villager){
+            float vildistance = Vector3.Distance(this.transform.position, obj.transform.position);
+            if (vildistance<trackingRange&&vildistance < distance)
+            {
+                agent.destination = obj.transform.position;
+                if (vildistance < atackRange&&!attackwait){
+                    anim.SetTrigger("Z_atack");
+                    transform.LookAt(new Vector3(obj.transform.position.x,transform.position.y,obj.transform.position.z));
+                }else if(attackwait){//攻撃中
+                    agent.destination = obj.transform.position;
+                }
+            }
         }
         if(agent.velocity.magnitude > 0){
             anim.SetBool("move", true);
@@ -202,6 +238,15 @@ public class Patrol : MonoBehaviour
         gameManager.SoundBikkuri();
         Instantiate (bikkuri, new Vector3(this.transform.position.x,this.transform.position.y+0.2f,this.transform.position.z), Quaternion.identity);
         timeforcool=0f;
+    }
+    public void Nockback(Vector3 vec,float sec){
+        nockback=true;
+        anim.SetBool("move",false);
+        anim.SetBool("run",false);
+        nockvec=vec;
+        nocktime=sec;
+        nockpoint=transform.position+vec;
+        nocktime2=0;
     }
     void Stop(){
         stopmove=true;
