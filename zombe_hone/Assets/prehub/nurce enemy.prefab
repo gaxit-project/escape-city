@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2194917395375652056}
   - component: {fileID: 238541520706720309}
   - component: {fileID: 625719100994462353}
-  - component: {fileID: 7406760269864815368}
+  - component: {fileID: 8265933718352478379}
   m_Layer: 7
   m_Name: nurce enemy
   m_TagString: Enemy
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44efeaa185d2c9d49b0a44a1aa31781b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7406760269864815368
+--- !u!114 &8265933718352478379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144447869711805988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1682a6789c220944aacde3106e10437e, type: 3}
+  m_Script: {fileID: 11500000, guid: e89b8f016f90aa14d8e575ba997320c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   testTrap: {fileID: 6569481150849502125}

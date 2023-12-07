@@ -29,7 +29,7 @@ public class GuidMasage : MonoBehaviour
         Mission_List[Mission_List.Length - 1].achievement = 0;
         Mission_List[Mission_List.Length - 1].achievementmax=0;
         Mission_List[Mission_List.Length - 1].mission="サブミッション";
-        AddMission(0,0,"住民を助ける",true,Targettrans);
+        //AddMission(0,0,"住民を助ける",true,Targettrans);
         MesageUpdate(0);
     }
     void Update(){

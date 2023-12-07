@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 7744311164823801600}
   - component: {fileID: 7742764737565582697}
   - component: {fileID: 7349338470805347594}
-  - component: {fileID: 569455612400234228}
+  - component: {fileID: 4658953484700308768}
   m_Layer: 7
   m_Name: arbino Zombie
   m_TagString: arbinoEnemy
@@ -634,10 +634,10 @@ MonoBehaviour:
   sound: 0
   trackingRange: 2
   quitRange: 4
-  atackRange: 0.8
+  atackRange: 1
   _sightAngle: 30
   tracking: 0
---- !u!114 &569455612400234228
+--- !u!114 &4658953484700308768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9112731702776152391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1682a6789c220944aacde3106e10437e, type: 3}
+  m_Script: {fileID: 11500000, guid: e89b8f016f90aa14d8e575ba997320c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   testTrap: {fileID: 380977858575741624}

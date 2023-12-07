@@ -47,7 +47,7 @@ public class CharacterStatusScript : MonoBehaviour
                 OnDie();
                 gameManager.Over();
             }
-            else if(this.gameObject.CompareTag("Enemy")||this.gameObject.CompareTag("arbinoEnemy")){
+            else if(this.gameObject.CompareTag("Enemy")||this.gameObject.CompareTag("arbinoEnemy")||this.gameObject.CompareTag("villager")){
                 OnDie();
                 gameManager.scoreUpdate(30);
                 GetComponent<DieandDrop>().Drop();
