@@ -13,7 +13,7 @@ public class GuidMasage : MonoBehaviour
     public string mission; //ミッション内容
     public bool outputdistance; //距離出力
     public Transform targettrans; //距離出力対象
-    public bool clear; //クリア状態なら非表示
+    public bool clear; //クリア状態なら非表示 あくまで表示するかしないかのbool
     }
     [SerializeField]
     private TextMeshProUGUI cardNameText;

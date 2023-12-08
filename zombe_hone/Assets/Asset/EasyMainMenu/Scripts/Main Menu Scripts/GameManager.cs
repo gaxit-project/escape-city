@@ -171,6 +171,9 @@ public class GameManager : MonoBehaviour
             task.GetComponent<GuidMasage>().Mission_List[1].achievement=0;
         }
     }
+    public void failsubtask(){
+        task.GetComponent<GuidMasage>().Mission_List[1].clear=true;
+    }
     public void scoreUpdate(int add,string strings){
         score.GetComponent<MenuScoreManager>().ScoreUpdate(add,strings);
     }

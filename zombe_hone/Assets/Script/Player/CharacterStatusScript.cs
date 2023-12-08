@@ -62,6 +62,7 @@ public class CharacterStatusScript : MonoBehaviour
             }else if(this.gameObject.CompareTag("villager")){
                 OnDie();
                 gameManager.subtaskUpdate(0);
+                gameManager.failsubtask();
                 //gameManager.scoreUpdate(30);
                 //GetComponent<DieandDrop>().Drop();
                 //GetComponent<Patrol>().stopmove=true;
