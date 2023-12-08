@@ -417,7 +417,6 @@ GameObject:
   - component: {fileID: 7744311164823801600}
   - component: {fileID: 7742764737565582697}
   - component: {fileID: 7349338470805347594}
-  - component: {fileID: 4658953484700308768}
   m_Layer: 7
   m_Name: arbino Zombie
   m_TagString: arbinoEnemy
@@ -630,26 +629,14 @@ MonoBehaviour:
   destPoint: 0
   BikkuriCooltime: 3
   attackcooltime: 3
+  attackwait: 1
   soundtrakingtime: 10
   sound: 0
   trackingRange: 2
   quitRange: 4
-  atackRange: 1
+  atackRange: 0.8
   _sightAngle: 30
   tracking: 0
---- !u!114 &4658953484700308768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9112731702776152391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e89b8f016f90aa14d8e575ba997320c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testTrap: {fileID: 380977858575741624}
 --- !u!1001 &6712616285014077997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1562,36 +1549,36 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4218786730144958956, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4915041121981506031}
-    - targetCorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+      addedObject: {fileID: 3241022694802422786}
+    - targetCorrespondingSourceObject: {fileID: 4218786730144958956, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 380977858575741624}
-    - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+      addedObject: {fileID: 5068509162733905769}
+    - targetCorrespondingSourceObject: {fileID: 3595003090696766661, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3133293927829175594}
-    - targetCorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+      addedObject: {fileID: 3057786697418700379}
+    - targetCorrespondingSourceObject: {fileID: 3595003090696766661, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4074859835357103813}
+      addedObject: {fileID: 3161999629085874047}
   m_SourcePrefab: {fileID: 100100000, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
 --- !u!4 &548431946683364925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6535966611668304912, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
   m_PrefabInstance: {fileID: 6712616285014077997}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2807283234776013606 stripped
+--- !u!1 &7468134626253880257 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8925423937584621835, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4218786730144958956, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
   m_PrefabInstance: {fileID: 6712616285014077997}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &3133293927829175594
+--- !u!136 &3241022694802422786
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2807283234776013606}
+  m_GameObject: {fileID: 7468134626253880257}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1605,36 +1592,34 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0.008
+  m_Height: 0.003
   m_Direction: 1
-  m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &4074859835357103813
+  m_Center: {x: 0, y: 0.001, z: 0}
+--- !u!114 &5068509162733905769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2807283234776013606}
+  m_GameObject: {fileID: 7468134626253880257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 1
-  TestTrap: {fileID: 380977858575741624}
-  attackdamage: 30
---- !u!1 &6725853656173943708 stripped
+  arbP: {fileID: 7349338470805347594}
+--- !u!1 &7839646212665751272 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 35756882073659825, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3595003090696766661, guid: b16f6dd7dd620a7419c6740b1fb64871, type: 3}
   m_PrefabInstance: {fileID: 6712616285014077997}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &4915041121981506031
+--- !u!136 &3057786697418700379
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725853656173943708}
+  m_GameObject: {fileID: 7839646212665751272}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1643,29 +1628,27 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0.008
+  m_Height: 0.003
   m_Direction: 1
-  m_Center: {x: -0.0005, y: 0.004, z: 0}
---- !u!114 &380977858575741624
+  m_Center: {x: 0, y: 0.001, z: 0}
+--- !u!114 &3161999629085874047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725853656173943708}
+  m_GameObject: {fileID: 7839646212665751272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da49e442cd7ec14c9c4474421e07dad, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9991897bbfe654c917454e92169908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 1
-  TestTrap: {fileID: 4074859835357103813}
-  attackdamage: 30
+  arbP: {fileID: 7349338470805347594}
 --- !u!1001 &9094253335803211414
 PrefabInstance:
   m_ObjectHideFlags: 0
