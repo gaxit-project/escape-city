@@ -14,10 +14,13 @@ public class arbinoPatrol : MonoBehaviour
     [SerializeField] int destPoint = 0;
     private NavMeshAgent agent;
     Animator anim;
+    private float origenalspeed;
     public float BikkuriCooltime=3;
     public float attackcooltime=3;
     private float timeforcool;
+    private float timeformovecool;
     private float timeforatackcool;
+    public float movecooltime=0;
     //public bool attackwait=true;
     private float timeforsound;
     public float soundtrakingtime=10f;
@@ -31,6 +34,7 @@ public class arbinoPatrol : MonoBehaviour
     [SerializeField] float atackRange = 3f;
     public float _sightAngle = 30f;
     [SerializeField] bool tracking = false;
+    bool stopmove=false;
 
     void Start()
     {
@@ -49,6 +53,7 @@ public class arbinoPatrol : MonoBehaviour
         timeforcool=BikkuriCooltime;
         timeforsound=soundtrakingtime;
         timeforatackcool=attackcooltime;
+        origenalspeed=agent.speed;
     }
 
 
@@ -77,10 +82,12 @@ public class arbinoPatrol : MonoBehaviour
             agent.destination=transform.position;
             return;
         }
-        if(timeforatackcool<attackcooltime){
-            timeforatackcool+=Time.deltaTime;
+        timeforatackcool+=Time.deltaTime;
+        if(stopmove){
+            timeformovecool+=Time.deltaTime;
+            if(timeformovecool>movecooltime)stopmove=false;
             agent.destination=transform.position;
-            transform.LookAt(new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z));
+            //transform.LookAt(new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z));
             anim.SetBool("move", false);
             return;
         }
@@ -103,8 +110,11 @@ public class arbinoPatrol : MonoBehaviour
             }
             if (distance < atackRange)
             {
-                anim.SetTrigger("Z_atack");
-                timeforatackcool=0f;
+                if(timeforatackcool>attackcooltime){
+                    anim.SetTrigger("Z_atack");
+                    timeforatackcool=0f;
+                }
+                //timeforatackcool=0f;
                 //attackwait=false;
             }
             //Player��ڕW�Ƃ���
@@ -216,5 +226,21 @@ public class arbinoPatrol : MonoBehaviour
         // Cubeプレハブを元に、インスタンスを生成
         Instantiate (bikkuri, new Vector3(this.transform.position.x,this.transform.position.y+0.2f,this.transform.position.z), Quaternion.identity);
         timeforcool=0f;
+    }
+    
+    void completeRun(){
+        stopmove=true;
+        timeformovecool=0f;
+        movecooltime=attackcooltime;
+        changespeed(1.0f);
+        //attackwait=false;
+    }
+    void Run(float runspeed){
+        transform.LookAt(new Vector3(playerPos.x,transform.position.y,playerPos.z));
+        //anim.SetBool("run",true);
+        changespeed(runspeed);
+    }
+    void changespeed(float speed){
+        agent.speed=speed*origenalspeed;
     }
 }

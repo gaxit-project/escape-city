@@ -630,11 +630,12 @@ MonoBehaviour:
   destPoint: 0
   BikkuriCooltime: 3
   attackcooltime: 3
+  movecooltime: 0
   soundtrakingtime: 10
   sound: 0
   trackingRange: 2
   quitRange: 4
-  atackRange: 0.8
+  atackRange: 3
   _sightAngle: 30
   tracking: 0
 --- !u!114 &4149123927172211466
