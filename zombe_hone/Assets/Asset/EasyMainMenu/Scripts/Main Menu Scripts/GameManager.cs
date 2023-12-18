@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public AudioSource damagesound;
     public AudioSource bikkurisound;
     public AudioSource zombiesound;
+    public AudioSource kubakusound;
+    public AudioSource hikokisound;
+    public AudioSource yokohikokisound;
     private GameObject mousemem;
     private RectTransform rectTransform;
     private GameObject brige;
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
     private int itemnum;
     public bool overcount=false;
     private bool gameclear=false;
+    private bool timeover=false;
     public TimerScript timer;
     
     
@@ -90,7 +94,14 @@ public class GameManager : MonoBehaviour
             audioCliar.Play();
             Clear.SetActive(true);
         }
-        
+        if(Input.GetKeyDown(KeyCode.K))//デバック用　Timer 0
+        {
+            movieStart();
+        }
+        if(Input.GetKeyDown(KeyCode.O))//デバック用　GameOver
+        {
+            Over();
+        }
     }
 
     public void Over()
@@ -103,7 +114,11 @@ public class GameManager : MonoBehaviour
         score.GetComponent<MenuScoreManager>().Allscoreoutput();
         score.GetComponent<MenuScoreManager>().scoreRock=true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
-        audioGameOver.Play();
+        
+        if(!timeover)
+        {
+            audioGameOver.Play();
+        }
         GameOver.SetActive(true);
         virtalmouse.SetActive(true);
         Cursor.SetActive(true);
@@ -179,12 +194,15 @@ public class GameManager : MonoBehaviour
     }
     public void movieStart(){
         overcount=true;
+        timeover=true;
         Fadepanel.Fadein=true;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(keepCanvas);
         DontDestroyOnLoad(virtalmouse);
         Invoke("changeTimeupcine", 1.0f);
         Invoke("kaijodestroy", 1.5f);
+        hikokisound.Play();
+        Invoke("yokohikouki", 6.7f);
     }
     void changeTimeupcine(){
         SceneManager.LoadScene("TimeUp");
@@ -195,5 +213,20 @@ public class GameManager : MonoBehaviour
         SceneManager.MoveGameObjectToScene(virtalmouse, SceneManager.GetActiveScene());
         Fadepanel.Fadeout=true;
         overcount=false;
+    }
+
+    void yokohikouki()
+    {
+        yokohikokisound.Play();
+        Invoke("soundstop",5.2f);
+        Invoke("kubaku", 6.5f);
+    }
+    void soundstop()
+    {
+        yokohikokisound.Stop();
+    }
+    void kubaku()
+    {
+        kubakusound.Play();
     }
 }
