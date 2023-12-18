@@ -93,6 +93,8 @@ public class Patrol : MonoBehaviour
     void Update()
     {
         if(anim.GetBool("Z_Die")){
+             Vector3 newPosition = transform.position;newPosition.y = 0.6f;
+             transform.position = newPosition;
             agent.destination=transform.position;
             return;
         }
