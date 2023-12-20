@@ -69,7 +69,7 @@ public class MainMenuController : MonoBehaviour {
     }
     void ChangeScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("movieStart");
     }
 
     public void openOptions_Game()

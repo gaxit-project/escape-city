@@ -99,16 +99,17 @@ public class PlayerControllerWithCamera : MonoBehaviour
     /// </summary>
     public void OnMove(InputAction.CallbackContext context)
     {
-        // ���͒l��ێ����Ă���
+        if(!gameManager.playerinput)return;
         _inputMove = context.ReadValue<Vector2>();
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        // ���͒l��ێ����Ă���
+        if(!gameManager.playerinput)return;
         _look = context.ReadValue<Vector2>();
     }
     public void OnAim(InputAction.CallbackContext context)
     {
+        if(!gameManager.playerinput)return;
         if (!context.performed){
             aim=false;
             
@@ -120,6 +121,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
     }
     public void OnRelord(InputAction.CallbackContext context){
+        if(!gameManager.playerinput)return;
         if(relordfunction==false)return;
         if(anim.GetBool("relord"))return;
         if (!context.performed){
@@ -130,6 +132,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
         relordmode=true;
     }
     public void OnChangeWeapon(InputAction.CallbackContext context){
+        if(!gameManager.playerinput)return;
         if(anim.GetBool("relord"))return;
         if (!context.performed){
             wepchange=false;
@@ -140,6 +143,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
+        if(!gameManager.playerinput)return;
         if (!context.performed || st <= 30f)
         {
             run = false;
@@ -168,6 +172,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
     /// </summary>
     public void OnJump(InputAction.CallbackContext context)
     {
+        if(!gameManager.playerinput)return;
         // �{�^���������ꂽ�u�Ԃ����n���Ă��鎞��������
         if (!context.performed || !_characterController.isGrounded) return;
 
@@ -272,6 +277,7 @@ public class PlayerControllerWithCamera : MonoBehaviour
             DamageSound();
         }
         if(anim.GetBool("Die"))return;
+        if(Time.timeScale==0f)return;
         var isGrounded = _characterController.isGrounded;
         //着地状態の処理。ジャンプに関係
         if (isGrounded && !_isGroundedPrev)

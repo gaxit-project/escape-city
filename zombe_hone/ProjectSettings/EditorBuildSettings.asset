@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/shimo1.unity
     guid: 22b57fbecbe708e44acfe3967aee9a4c
   - enabled: 1
+    path: Assets/Scenes/movieStart.unity
+    guid: 7a09964b5b440cf48962b1acf5cd0ad4
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 51ec862e9d9e7a44fb6b01140f27b659
   - enabled: 1

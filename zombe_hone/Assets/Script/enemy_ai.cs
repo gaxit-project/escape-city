@@ -92,6 +92,7 @@ public class Patrol : MonoBehaviour
 
     void Update()
     {
+        if(!gameManager.enemymove)return;
         if(anim.GetBool("Z_Die")){
              Vector3 newPosition = transform.position;newPosition.y = 0.6f;
              transform.position = newPosition;

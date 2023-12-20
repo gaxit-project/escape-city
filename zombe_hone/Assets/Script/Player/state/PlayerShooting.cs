@@ -11,7 +11,7 @@ public class PlayerShootingsecond : MonoBehaviour
     private int damagePerShot = 20;
     private float timeBetweenBullets = 0.15f;
     private float range = 100f;
-
+    private GameManager gameManager;
     float timer;
     private WeaponStates weaponst;
     Ray shootRay = new Ray();
@@ -29,6 +29,7 @@ public class PlayerShootingsecond : MonoBehaviour
 
     void Awake ()
     {
+        gameManager = FindObjectOfType<GameManager>();
         anim = GameObject.Find("Player").GetComponent<Animator>();
         shootableMask = LayerMask.GetMask ("enemy");
         gunParticles = GetComponent<ParticleSystem> ();
@@ -36,6 +37,7 @@ public class PlayerShootingsecond : MonoBehaviour
         gunLight = GetComponent<Light> ();
     }
     public void OnFire(InputAction.CallbackContext context){
+        if(!gameManager.playerinput)return;
         if(anim.GetBool("relord"))return;
         if (context.performed){
             Fire=true;
@@ -52,6 +54,7 @@ public class PlayerShootingsecond : MonoBehaviour
             DisableEffects ();
             return;
         }
+        if(Time.timeScale==0f)return;
         weaponst = weaponscript.weapon.GetComponent<WeaponStates>();
         damagePerShot=weaponst.damagePerShot;
         timeBetweenBullets=weaponst.timeBetweenBullets;

@@ -8,7 +8,10 @@ using System.Security.Cryptography.X509Certificates;
 public class GameManager : MonoBehaviour
 {
     public GameObject keepCanvas;
+    public GameObject gunCanvas;
+    public GameObject invCanvas;
     public GameObject PauseMenu;
+    public GameObject Map;
     public GameObject Clear;
     public GameObject GameOver;
     public GameObject Cursor;
@@ -35,15 +38,26 @@ public class GameManager : MonoBehaviour
     public GameObject scoreranking;
     public FadeScript Fadepanel;
     public bool mainmenufanction=true;
-    private int itemnum;
+    public int itemnum;
     public bool overcount=false;
     private bool gameclear=false;
-    private bool timeover=false;
+    public bool timeover=false;
     public TimerScript timer;
+    public bool playerinput=false;
+    public bool enemymove=false;
+    public bool CanvasOFF=true;
+    public bool Tuitlial=true;
+    private float pausetimeScale=1.0f;
     
     
     void Start()
     {
+        if(GameObject.Find("TuitlialOBJ")==null){
+            playerinput=true;
+            Tuitlial=false;
+            enemymove=true;
+            CanvasOFF=false;
+        }
         brige=GameObject.Find("brige");
         if(brige!=null)brige.SetActive(false);
         if(mainmenufanction){
@@ -60,25 +74,36 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(!mainmenufanction)return;
+        if(CanvasOFF&&!timeover){
+            keepCanvas.SetActive(false);
+            gunCanvas.SetActive(false);
+            invCanvas.SetActive(false);
+        }else if(!timeover){
+            keepCanvas.SetActive(true);
+            gunCanvas.SetActive(true);
+            invCanvas.SetActive(true);
+        }
         if(PauseMenu.activeInHierarchy)
         {
-            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
+            if((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))&&!Tuitlial)
             {
             audioSe.Play();
+            Map.SetActive(true);
             PauseMenu.SetActive(false);
             Cursor.SetActive(false);
             virtalmouse.SetActive(false);
             scoreranking.SetActive(true);
             //Destroy(mousemem);
-            Time.timeScale = 1;
+            Time.timeScale = pausetimeScale;
             }
             
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
+            if((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))&&!Tuitlial)
             {
             audioSe.Play();
+            Map.SetActive(false);
             scoreranking.SetActive(false);
             PauseMenu.SetActive(true);
             Cursor.SetActive(true);
@@ -86,6 +111,7 @@ public class GameManager : MonoBehaviour
             /*rectTransform.anchoredPosition = new Vector2(412,222);
             mousemem=Instantiate (virtalmouse, virtalmouse.transform.position, Quaternion.identity);
             mousemem.SetActive(true);*/
+            pausetimeScale=Time.timeScale;
             Time.timeScale = 0f;
             }
         }
@@ -122,6 +148,12 @@ public class GameManager : MonoBehaviour
         GameOver.SetActive(true);
         virtalmouse.SetActive(true);
         Cursor.SetActive(true);
+    }
+    public void changeTuitlial(){
+        Invoke("Tuitlials",0.5f);
+    }
+    public void Tuitlials(){
+        Tuitlial=false;
     }
     public void GameClear(){
         if(overcount)return;
@@ -192,6 +224,7 @@ public class GameManager : MonoBehaviour
     public void scoreUpdate(int add,string strings){
         score.GetComponent<MenuScoreManager>().ScoreUpdate(add,strings);
     }
+
     public void movieStart(){
         overcount=true;
         timeover=true;

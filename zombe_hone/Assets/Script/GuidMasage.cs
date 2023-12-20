@@ -52,7 +52,7 @@ public class GuidMasage : MonoBehaviour
         }
         for(int i=0;i<Mission_List.Length;i++){
             if(Mission_List[i].clear)continue;
-            if(Mission_List[i].outputdistance){
+            if(Mission_List[i].outputdistance&&!gameManager.timeover){
                 if(Mission_List[i].achievementmax!=0)
                     str+="\n"+Mission_List[i].mission+":"+Mission_List[i].achievement+"/"+Mission_List[i].achievementmax+":"+(int)Vector3.Distance(Mission_List[i].targettrans.position, Playertrans.position);
                 else{

@@ -11,7 +11,7 @@ public class Cinemachinecamara : MonoBehaviour
     private CinemachineVirtualCamera _virtualCamera;
     private GameObject player;
     public GameObject obj;
-    [Header("Mode マウス=0,方向=1"), SerializeField]int mode = 1;
+    [Header("Mode マウス=0,方向=1"), SerializeField]public int mode = 1;
     public float visionlengthX= 10f;
     public float visionlengthZ= 10f;
     Vector3 visionsize;
@@ -55,6 +55,7 @@ public class Cinemachinecamara : MonoBehaviour
             Vector3 lookpoint=player.transform.position;
             lookpoint+=new Vector3(visionlengthX*forward.x,0,visionlengthZ*forward.z);
             obj.transform.position=lookpoint;
+        }else if(mode == 2){
         }
     }
 }

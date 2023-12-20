@@ -9,6 +9,7 @@ using UnityEngine.AI;
 
 public class arbinoPatrol : MonoBehaviour
 {
+    private GameManager gameManager;
     public GameObject bikkuri; 
     public Transform[] points;
     [SerializeField] int destPoint = 0;
@@ -38,6 +39,7 @@ public class arbinoPatrol : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -78,6 +80,7 @@ public class arbinoPatrol : MonoBehaviour
 
     void Update()
     {
+        if(!gameManager.enemymove)return;
         if(anim.GetBool("Z_Die")){
             agent.destination=transform.position;
             return;

@@ -27,6 +27,7 @@ public class Attack : MonoBehaviour
     public void OnFire(InputAction.CallbackContext context)
     {
         if(anim.GetBool("Die"))return;
+        if(!gameManager.playerinput)return;
         if (context.performed&&anim.GetInteger("type")==0&&wait!=true)
         {
             GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
