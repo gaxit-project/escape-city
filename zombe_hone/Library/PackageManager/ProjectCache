@@ -1,28 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: "C:/Users/nomun/Documents/\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8/1219
-      gitcopy/zombe_hone/Packages/manifest.json"
+    m_FilePath: C:/Users/nomun/Documents/testGit/zombe_hone/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638375629268062327
+      ticks: 638355286332058551
     m_Hash: 4214108106
   m_LockFileStatus:
-    m_FilePath: "C:/Users/nomun/Documents/\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8/1219
-      gitcopy/zombe_hone/Packages/packages-lock.json"
+    m_FilePath: C:/Users/nomun/Documents/testGit/zombe_hone/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638375629268062327
+      ticks: 638355286332068622
     m_Hash: 2316314689
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: "C:/Users/nomun/Documents/\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8/1219
-  gitcopy/zombe_hone/Packages"
+m_ProjectPath: C:/Users/nomun/Documents/testGit/zombe_hone/Packages
 m_EditorVersion: 2022.3.9f1 (ea401c316338)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
@@ -30,8 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.2d.sprite@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.2d.sprite@1.0.0
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -89,8 +85,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.2d.tilemap@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.2d.tilemap@1.0.0
   assetPath: Packages/com.unity.2d.tilemap
   name: com.unity.2d.tilemap
   displayName: 2D Tilemap Editor
@@ -163,8 +158,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.4.2
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ads@4.4.2"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ads@4.4.2
   assetPath: Packages/com.unity.ads
   name: com.unity.ads
   displayName: Advertisement Legacy
@@ -281,8 +275,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.5
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ai.navigation@1.1.5"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ai.navigation@1.1.5
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -354,8 +347,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.8.1
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.analytics@3.8.1"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.analytics@3.8.1
   assetPath: Packages/com.unity.analytics
   name: com.unity.analytics
   displayName: Analytics Library
@@ -471,8 +463,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.9.7
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.cinemachine@2.9.7"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.cinemachine@2.9.7
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -643,8 +634,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.7
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.collab-proxy@2.0.7"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.collab-proxy@2.0.7
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -788,8 +778,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.feature.development@1.0.1"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.feature.development@1.0.1
   assetPath: Packages/com.unity.feature.development
   name: com.unity.feature.development
   displayName: Engineering
@@ -882,8 +871,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.24
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ide.rider@3.0.24"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ide.rider@3.0.24
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -986,8 +974,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.18
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.18"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ide.visualstudio@2.0.18
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -1079,8 +1066,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.5
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ide.vscode@1.2.5"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ide.vscode@1.2.5
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -1148,8 +1134,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.7.0
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.inputsystem@1.7.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.inputsystem@1.7.0
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -1266,8 +1251,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 5.1.1
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.probuilder@5.1.1"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.probuilder@5.1.1
   assetPath: Packages/com.unity.probuilder
   name: com.unity.probuilder
   displayName: ProBuilder
@@ -1410,8 +1394,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.9.3
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.purchasing@4.9.3"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.purchasing@4.9.3
   assetPath: Packages/com.unity.purchasing
   name: com.unity.purchasing
   displayName: In App Purchasing
@@ -1577,8 +1560,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 14.0.8
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.8"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.render-pipelines.universal@14.0.8
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal RP
@@ -1716,8 +1698,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.33
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.test-framework@1.1.33"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.test-framework@1.1.33
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1850,8 +1831,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.6
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.textmeshpro@3.0.6
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -1971,6 +1951,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
+    - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1981,6 +1962,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
+    - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.6
@@ -2032,8 +2014,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.7.5
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.timeline@1.7.5"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.timeline@1.7.5
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -2201,8 +2182,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ugui@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ugui@1.0.0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -2273,8 +2253,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.0
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.visualscripting@1.9.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.visualscripting@1.9.0
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -2371,8 +2350,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.1.10
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.xr.legacyinputhelpers@2.1.10"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.10
   assetPath: Packages/com.unity.xr.legacyinputhelpers
   name: com.unity.xr.legacyinputhelpers
   displayName: XR Legacy Input Helpers
@@ -2474,8 +2452,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.ai@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.ai@1.0.0
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -2530,8 +2507,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.androidjni@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.androidjni@1.0.0
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -2585,8 +2561,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.animation@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.animation@1.0.0
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -2641,8 +2616,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.assetbundle@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -2697,8 +2671,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.audio@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.audio@1.0.0
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -2753,8 +2726,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.cloth@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.cloth@1.0.0
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -2813,8 +2785,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.director@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.director@1.0.0
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -2877,8 +2848,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.imageconversion@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -2934,8 +2904,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.imgui@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -2990,8 +2959,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.jsonserialize@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -3046,8 +3014,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.particlesystem@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -3102,8 +3069,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.physics@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.physics@1.0.0
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -3158,8 +3124,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.physics2d@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.physics2d@1.0.0
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -3214,8 +3179,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.screencapture@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.screencapture@1.0.0
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -3274,8 +3238,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.terrain@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.terrain@1.0.0
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -3330,8 +3293,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.terrainphysics@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -3394,8 +3356,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.tilemap@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.tilemap@1.0.0
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -3453,8 +3414,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.ui@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -3509,8 +3469,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.uielements@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.uielements@1.0.0
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -3577,8 +3536,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.umbra@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.umbra@1.0.0
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -3633,8 +3591,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unityanalytics@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -3697,8 +3654,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unitywebrequest@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -3753,8 +3709,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -3817,8 +3772,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -3881,8 +3835,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -3945,8 +3898,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -4025,8 +3977,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.vehicles@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.vehicles@1.0.0
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -4085,8 +4036,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.video@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.video@1.0.0
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -4153,8 +4103,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.vr@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.vr@1.0.0
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -4223,8 +4172,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.wind@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.wind@1.0.0
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -4279,8 +4227,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.xr@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.xr@1.0.0
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -4347,8 +4294,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.modules.subsystems@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.modules.subsystems@1.0.0
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -4407,8 +4353,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.6
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.ext.nunit@1.0.6"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.ext.nunit@1.0.6
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -4479,8 +4424,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.6
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.mathematics@1.2.6"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.mathematics@1.2.6
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -4554,8 +4498,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.8.8
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.burst@1.8.8"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.burst@1.8.8
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -4742,8 +4685,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 14.0.8
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.render-pipelines.core@14.0.8"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.render-pipelines.core@14.0.8
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Core RP Library
@@ -4921,8 +4863,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 14.0.8
   source: 2
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.shadergraph@14.0.8"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.shadergraph@14.0.8
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -5097,8 +5038,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.0
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.services.core@1.11.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.services.core@1.11.0
   assetPath: Packages/com.unity.services.core
   name: com.unity.services.core
   displayName: Services Core
@@ -5195,8 +5135,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.1
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.settings-manager@2.0.1"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.settings-manager@2.0.1
   assetPath: Packages/com.unity.settings-manager
   name: com.unity.settings-manager
   displayName: Settings Manager
@@ -5258,8 +5197,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.editorcoroutines@1.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.editorcoroutines@1.0.0
   assetPath: Packages/com.unity.editorcoroutines
   name: com.unity.editorcoroutines
   displayName: Editor Coroutines
@@ -5324,8 +5262,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.2
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.performance.profile-analyzer@1.2.2"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2
   assetPath: Packages/com.unity.performance.profile-analyzer
   name: com.unity.performance.profile-analyzer
   displayName: Profile Analyzer
@@ -5396,8 +5333,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.4
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.testtools.codecoverage@1.2.4"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4
   assetPath: Packages/com.unity.testtools.codecoverage
   name: com.unity.testtools.codecoverage
   displayName: Code Coverage
@@ -5445,9 +5381,11 @@ m_ResolvedPackages:
     - 1.2.2
     - 1.2.3
     - 1.2.4
+    - 1.2.5
     compatible:
     - 1.2.4
-    recommended: 1.2.4
+    - 1.2.5
+    recommended: 1.2.5
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -5501,8 +5439,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 5.0.0
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.services.analytics@5.0.0"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.services.analytics@5.0.0
   assetPath: Packages/com.unity.services.analytics
   name: com.unity.services.analytics
   displayName: Analytics
@@ -5606,8 +5543,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.2
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.searcher@4.9.2"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.searcher@4.9.2
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -5679,8 +5615,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.2.1
   source: 1
-  resolvedPath: "C:\\Users\\nomun\\Documents\\\u5927\u5DE5\u5927\u30B2\u30FC\u30E0\u5236\u4F5C\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\1219
-    gitcopy\\zombe_hone\\Library\\PackageCache\\com.unity.nuget.newtonsoft-json@3.2.1"
+  resolvedPath: C:\Users\nomun\Documents\testGit\zombe_hone\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1
   assetPath: Packages/com.unity.nuget.newtonsoft-json
   name: com.unity.nuget.newtonsoft-json
   displayName: Newtonsoft Json
