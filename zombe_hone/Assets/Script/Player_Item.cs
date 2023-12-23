@@ -50,7 +50,7 @@ public class Player_Item : MonoBehaviour
         {
             Destroy(other.gameObject); // ブロックアイテムを削除
             gameManager.scoreUpdate(1000,"街から脱出!");
-            gameManager.GameClear();
+            gameManager.endmovieStart();
             GetComponent<CapsuleCollider>().enabled = false;
         }
         if(other.CompareTag("item")){

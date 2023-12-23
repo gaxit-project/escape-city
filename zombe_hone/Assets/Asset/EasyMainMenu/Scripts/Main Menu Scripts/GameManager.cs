@@ -115,12 +115,13 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             }
         }
-        if(Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            audioCliar.Play();
-            Clear.SetActive(true);
+            // GameClear();
+            brige.SetActive(true);
+            endmovieStart();
         }
-        if(Input.GetKeyDown(KeyCode.K))//デバック用　Timer 0
+        if (Input.GetKeyDown(KeyCode.K))//デバック用　Timer 0
         {
             movieStart();
         }
@@ -155,23 +156,31 @@ public class GameManager : MonoBehaviour
     public void Tuitlials(){
         Tuitlial=false;
     }
-    public void GameClear(){
-        if(overcount)return;
-        if(gameclear)return;
-        gameclear=true;
-        timer.timerstop=true;
+    public void GameClear()
+    {
+        //Debug.Log("メソッドを実行します");
+        if (overcount) return;
+        //Debug.Log("メソッドを返します１");
+        if (gameclear) return;
+        //Debug.Log("メソッドを返します２");
+        gameclear = true;
+        //Debug.Log("メソッドを実行しています。１");
+        timer.timerstop = true;
         timer.AddScore();
         task.GetComponent<GuidMasage>().AddScore();
         task.SetActive(false);
+        //Debug.Log("メソッドを実行しています。２");
         score.GetComponent<MenuScoreManager>().Allscoreoutput();
-        score.GetComponent<MenuScoreManager>().scoreRock=true;
+        score.GetComponent<MenuScoreManager>().scoreRock = true;
         score.GetComponent<MenuScoreManager>().ScoreRankingUpdate();
+        //Debug.Log("メソッドを実行しています。２.1");
         audioCliar.Play();
         Clear.SetActive(true);
-        brige.SetActive(true);
         virtalmouse.SetActive(true);
         Cursor.SetActive(true);
+        //Debug.Log("メソッドを実行しています。３");
         Time.timeScale = 0f;
+        //Debug.Log("メソッドを実行しました。");
     }
     public void SoundBullet()
     {
@@ -237,9 +246,28 @@ public class GameManager : MonoBehaviour
         hikokisound.Play();
         Invoke("yokohikouki", 6.7f);
     }
+
+    public void endmovieStart()
+    {
+        brige.SetActive(true);
+        timer.timerstop = true;
+        Fadepanel.Fadein = true;
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(keepCanvas);
+        DontDestroyOnLoad(virtalmouse);
+        Invoke("changeEndingcine", 1.0f);
+        Invoke("kaijodestroy", 1.5f);
+    }
+
     void changeTimeupcine(){
         SceneManager.LoadScene("TimeUp");
     }
+
+    void changeEndingcine()
+    {
+        SceneManager.LoadScene("Ending");
+    }
+
     void kaijodestroy(){
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(keepCanvas, SceneManager.GetActiveScene());
