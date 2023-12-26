@@ -44,6 +44,7 @@ public class GameManager2 : MonoBehaviour
     bool main=false;
     bool flag=false;
     bool tuitlialflag=false;
+    private GameObject Messageimage;
     /*
     private int itemnum;
     public bool overcount=false;
@@ -54,6 +55,10 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         Messagestr=Message.GetComponent<textchanger>();
+        Messageimage=GameObject.Find("zimaku");
+        if(Messageimage!=null){
+            Messageimage.SetActive(false);
+        }
         //brige=GameObject.Find("brige");
         //if(brige!=null)brige.SetActive(false);
         /*if(mainmenufanction){
@@ -79,6 +84,9 @@ public class GameManager2 : MonoBehaviour
                 DontDestroyOnLoad(fade);
                 DontDestroyOnLoad(gameObject);
                 Invoke("changescineMain", 1.0f);
+                Message.SetActive(false);
+                Messageimage.SetActive(false);
+                Messagestr.time=0;
                 Invoke("kaijodestroy", 1.1f);
                 main=true;
             }else{
@@ -94,12 +102,16 @@ public class GameManager2 : MonoBehaviour
         DontDestroyOnLoad(fade);
         DontDestroyOnLoad(gameObject);
         Invoke("changescineMain", 1.0f);
+        Message.SetActive(false);
+        Messageimage.SetActive(false);
+        Messagestr.time=0;
         Invoke("kaijodestroy", 1.1f);
     }
 
     public void changeMessage(string str)
     {
         Message.SetActive(true);
+        Messageimage.SetActive(true);
         Messagestr.ChangeMessage(str);
     }
     public void changescineMain(){

@@ -48,7 +48,10 @@ public class GameManager : MonoBehaviour
     public bool CanvasOFF=true;
     public bool Tuitlial=true;
     private float pausetimeScale=1.0f;
-    
+    private GameObject Message;
+    private GameObject Messageimage;
+    private textchanger Messagestr;
+    public bool Main=true;
     
     void Start()
     {
@@ -57,6 +60,14 @@ public class GameManager : MonoBehaviour
             Tuitlial=false;
             enemymove=true;
             CanvasOFF=false;
+        }
+        Messageimage=GameObject.Find("zimaku");
+        Message=GameObject.Find("MessageZIMAKU");
+        if(Message!=null){
+            Messagestr=Message.GetComponent<textchanger>();
+        }
+        if(Messageimage!=null){
+            Messageimage.SetActive(false);
         }
         brige=GameObject.Find("brige");
         if(brige!=null)brige.SetActive(false);
@@ -74,14 +85,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(!mainmenufanction)return;
-        if(CanvasOFF&&!timeover){
-            keepCanvas.SetActive(false);
-            gunCanvas.SetActive(false);
-            invCanvas.SetActive(false);
-        }else if(!timeover){
-            keepCanvas.SetActive(true);
-            gunCanvas.SetActive(true);
-            invCanvas.SetActive(true);
+        if(Main){
+            if(CanvasOFF&&!timeover){
+                keepCanvas.SetActive(false);
+                gunCanvas.SetActive(false);
+                invCanvas.SetActive(false);
+            }else if(!timeover){
+                keepCanvas.SetActive(true);
+                gunCanvas.SetActive(true);
+                invCanvas.SetActive(true);
+            }
         }
         if(PauseMenu.activeInHierarchy)
         {
@@ -260,11 +273,13 @@ public class GameManager : MonoBehaviour
     }
 
     void changeTimeupcine(){
+        Main=false;
         SceneManager.LoadScene("TimeUp");
     }
 
     void changeEndingcine()
     {
+        Main=false;
         SceneManager.LoadScene("Ending");
     }
 
@@ -275,7 +290,12 @@ public class GameManager : MonoBehaviour
         Fadepanel.Fadeout=true;
         overcount=false;
     }
-
+    public void changeMessage(string str)
+    {
+        Message.SetActive(true);
+        Messageimage.SetActive(true);
+        Messagestr.ChangeMessage(str);
+    }
     void yokohikouki()
     {
         yokohikokisound.Play();

@@ -35,6 +35,15 @@ public class Player_Item : MonoBehaviour
                 sphereItemCount++;
                 GameObject kira = Instantiate(effect, transform.position, Quaternion.identity);
                 //Debug.Log("橋の部品を手に入れた: " + sphereItemCount);
+                if (sphereItemCount == 1) {
+                    gameManager.changeMessage("よし、修理用の部品だ。あと二つ");
+                }
+                if (sphereItemCount == 2) {
+                    gameManager.changeMessage("二つ目だ。あと一つ。");
+                }
+                if (sphereItemCount == 3) {
+                    gameManager.changeMessage("よし、これで橋が修理できる。早くこの街からでないと。");
+                }
                 if (sphereItemCount >= 3)
                 {
                     var guid = GameObject.Find("Clear").GetComponent<GuidLine>();

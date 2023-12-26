@@ -10,7 +10,7 @@ public class textchanger : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI cardNameText;
     
-    private float time;
+    public float time;
     public float cooltime=3.0f;
     Transform Playertrans;
     bool kaigyo=false;
@@ -23,6 +23,7 @@ public class textchanger : MonoBehaviour
     void Update(){
         time-=Time.deltaTime;
         if(time<=0){
+            target.SetActive(false);
             gameObject.SetActive(false);
             kaigyo = false;
         }

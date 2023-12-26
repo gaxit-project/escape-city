@@ -11,13 +11,15 @@ public class weaponscript : MonoBehaviour
     public int[] listgunnum;//type1の武器のchild番号を保持
     public int[] listsordnum;//type0の武器のchild番号を保持
     void Start(){
-        if(weapontype==0){
-            weapon=transform.GetChild(listsordnum[weaponnumber[weapontype]]).gameObject;
-        }else{
-            weapon=transform.GetChild(listgunnum[weaponnumber[weapontype]]).gameObject;
+        if(weaponnumber.Length!=0){
+            if(weapontype==0){
+                weapon=transform.GetChild(listsordnum[weaponnumber[weapontype]]).gameObject;
+            }else{
+                weapon=transform.GetChild(listgunnum[weaponnumber[weapontype]]).gameObject;
+            }
+            anim = GameObject.Find("Player").GetComponent<Animator>();
+            anim.SetInteger("type", weapon.GetComponent<WeaponStates>().type);
         }
-        anim = GameObject.Find("Player").GetComponent<Animator>();
-        anim.SetInteger("type", weapon.GetComponent<WeaponStates>().type);
     }
     public void changeweapon(int i)
     {
