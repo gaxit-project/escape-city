@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
     private GameObject Messageimage;
     private textchanger Messagestr;
     public bool Main=true;
-    
+    private bool villagerDie = false; //villagerの生死
+
     void Start()
     {
         if(GameObject.Find("TuitlialOBJ")==null){
@@ -128,10 +129,17 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))//デバック用　Clear
         {
             // GameClear();
             brige.SetActive(true);
+            endmovieStart();
+        }
+        if (Input.GetKeyDown(KeyCode.L))//デバック用　Clear Solo
+        {
+            // GameClear();
+            brige.SetActive(true);
+            villagerDie = true;
             endmovieStart();
         }
         if (Input.GetKeyDown(KeyCode.K))//デバック用　Timer 0
@@ -264,6 +272,7 @@ public class GameManager : MonoBehaviour
     {
         brige.SetActive(true);
         timer.timerstop = true;
+        timeover = true;                //なんかバグってたけどこれ入れたらいけた？？
         Fadepanel.Fadein = true;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(keepCanvas);
@@ -309,5 +318,14 @@ public class GameManager : MonoBehaviour
     void kubaku()
     {
         kubakusound.Play();
+    }
+
+    public bool villager_Die()
+    {
+        return villagerDie;
+    }
+    public void villager_switch()
+    {
+        villagerDie = true;
     }
 }
