@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class FadeScript : MonoBehaviour {
-    float alfa;
+    public float alfa;
     public float speed = 1.5f;
     float red, green, blue;
     public bool Fadein=false;
@@ -39,6 +39,9 @@ public class FadeScript : MonoBehaviour {
             alfa=0f;
             Fadeout=false;
         }
+        GetComponent<Image>().color = new Color(red, green, blue, alfa);
+    }
+    public void changeColor(float red, float green, float blue, float alfa){
         GetComponent<Image>().color = new Color(red, green, blue, alfa);
     }
 }

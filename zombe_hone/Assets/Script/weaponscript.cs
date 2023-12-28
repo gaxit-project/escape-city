@@ -66,6 +66,41 @@ public class weaponscript : MonoBehaviour
         }
         return false;
     }
+    public bool checknextweapon(int type)
+    {
+        //weapon.SetActive(false);  
+        int pastnum=weaponnumber[type];
+        if(type==0){
+            for(int i=0;i<listsordnum.Length;i++){
+                if((listsordnum.Length-1)>weaponnumber[type]){
+                    weaponnumber[type]+=1;
+                    if(transform.GetChild(listsordnum[weaponnumber[type]]).gameObject.GetComponent<WeaponStates>().lv!=0)break;
+                }else{
+                    weaponnumber[type]=0;
+                    if(transform.GetChild(listsordnum[weaponnumber[type]]).GetComponent<WeaponStates>().lv!=0)break;
+                }
+            }
+            //weapon=transform.GetChild(listsordnum[weaponnumber[weapontype]]).gameObject;
+        }else{
+            for(int i=0;i<listgunnum.Length;i++){
+                if((listgunnum.Length-1)>weaponnumber[type]){
+                    weaponnumber[type]+=1;
+                    if(transform.GetChild(listgunnum[weaponnumber[type]]).GetComponent<WeaponStates>().lv!=0)break;
+                }else{
+                    weaponnumber[type]=0;
+                    if(transform.GetChild(listgunnum[weaponnumber[type]]).GetComponent<WeaponStates>().lv!=0)break;
+                }
+            }
+            //weapon=transform.GetChild(listgunnum[weaponnumber[weapontype]]).gameObject;
+        }
+        //weapon.SetActive(true);
+        if(pastnum!=weaponnumber[type]){
+            weaponnumber[type]=pastnum;
+            return true;
+        }
+        weaponnumber[type]=pastnum;
+        return false;
+    }
     public GameObject acseceweapon(int i){
         GameObject weap;
         if(i==0){
